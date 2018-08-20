@@ -33,7 +33,7 @@ object BottomNavigationAction {
       onBlur:                   OnJSEv1[ReactEvent],
       onClick:                  OnJSEv1[ReactMouseEvent],
       onFocus:                  OnJSEv1[ReactFocusEvent],
-      onKeyboardFocus:          OnJSEv1[ReactFocusEvent],
+      onFocusVisible:           OnJSEv1[ReactFocusEvent],
       onKeyDown:                OnJSEv1[ReactKeyboardEvent],
       onKeyUp:                  OnJSEv1[ReactKeyboardEvent],
       onMouseDown:              OnJSEv1[ReactMouseEvent],
@@ -59,7 +59,7 @@ object BottomNavigationAction {
     onBlur.foreach(v => p.updateDynamic("onBlur")(v))
     onClick.foreach(v => p.updateDynamic("onClick")(v))
     onFocus.foreach(v => p.updateDynamic("onFocus")(v))
-    onKeyboardFocus.foreach(v => p.updateDynamic("onFocusVisible")(v))
+    onFocusVisible.foreach(v => p.updateDynamic("onFocusVisible")(v))
     onKeyDown.foreach(v => p.updateDynamic("onKeyDown")(v))
     onKeyUp.foreach(v => p.updateDynamic("onKeyUp")(v))
     onMouseDown.foreach(v => p.updateDynamic("onMouseDown")(v))

@@ -35,7 +35,7 @@ object ExpansionPanelSummary {
       onBlur:                   OnJSEv1[ReactEvent],
       onClick:                  OnJSEv1[ReactMouseEvent],
       onFocus:                  OnJSEv1[ReactFocusEvent],
-      onKeyboardFocus:          OnJSEv1[ReactFocusEvent],
+      onFocusVisible:           OnJSEv1[ReactFocusEvent],
       onKeyDown:                OnJSEv1[ReactKeyboardEvent],
       onKeyUp:                  OnJSEv1[ReactKeyboardEvent],
       onMouseDown:              OnJSEv1[ReactMouseEvent],
@@ -62,7 +62,7 @@ object ExpansionPanelSummary {
     onBlur.foreach(p.updateDynamic("onBlur")(_))
     onClick.foreach(p.updateDynamic("onClick")(_))
     onFocus.foreach(p.updateDynamic("onFocus")(_))
-    onKeyboardFocus.foreach(p.updateDynamic("onFocusVisible")(_))
+    onFocusVisible.foreach(p.updateDynamic("onFocusVisible")(_))
     onKeyDown.foreach(p.updateDynamic("onKeyDown")(_))
     onKeyUp.foreach(p.updateDynamic("onKeyUp")(_))
     onMouseDown.foreach(p.updateDynamic("onMouseDown")(_))
