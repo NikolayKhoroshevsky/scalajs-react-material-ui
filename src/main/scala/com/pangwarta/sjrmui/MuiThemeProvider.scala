@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object MuiThemeProvider {
 
-  @JSImport("material-ui", "MuiThemeProvider")
+  @JSImport("@material-ui/core", "MuiThemeProvider")
   @js.native
   private object RawComponent extends js.Object
 

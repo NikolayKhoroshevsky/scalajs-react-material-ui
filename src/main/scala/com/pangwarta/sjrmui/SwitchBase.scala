@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object SwitchBase {
 
-  @JSImport("material-ui", "SwitchBase")
+  @JSImport("@material-ui/core", "SwitchBase")
   @js.native
   private object RawComponent extends js.Object
 

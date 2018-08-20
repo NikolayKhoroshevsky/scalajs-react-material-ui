@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object FormHelperText {
 
-  @JSImport("material-ui", "FormHelperText")
+  @JSImport("@material-ui/core", "FormHelperText")
   @js.native
   private object RawComponent extends js.Object
 

@@ -13,7 +13,7 @@ import scala.scalajs.js.|
 // TODO: Wrap theming?
 object Drawer {
 
-  @JSImport("material-ui", "Drawer")
+  @JSImport("@material-ui/core", "Drawer")
   @js.native
   private object RawComponent extends js.Object
 

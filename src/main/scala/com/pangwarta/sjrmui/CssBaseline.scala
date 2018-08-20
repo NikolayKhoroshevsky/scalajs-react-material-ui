@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object CssBaseline {
 
-  @JSImport("material-ui", "CssBaseline")
+  @JSImport("@material-ui/core", "CssBaseline")
   @js.native
   private object RawComponent extends js.Object
 

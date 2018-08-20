@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 
 object Input {
 
-  @JSImport("material-ui", "Input")
+  @JSImport("@material-ui/core", "Input")
   @js.native
   private object RawComponent extends js.Object
 

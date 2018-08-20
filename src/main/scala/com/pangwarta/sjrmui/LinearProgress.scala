@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object LinearProgress {
 
-  @JSImport("material-ui", "LinearProgress")
+  @JSImport("@material-ui/core", "LinearProgress")
   @js.native
   private object RawComponent extends js.Object
 

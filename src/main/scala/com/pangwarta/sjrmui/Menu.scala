@@ -13,7 +13,7 @@ import scala.scalajs.js.|
 
 object Menu {
 
-  @JSImport("material-ui", "Menu")
+  @JSImport("@material-ui/core", "Menu")
   @js.native
   private object RawComponent extends js.Object
 

@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object ListItemText {
 
-  @JSImport("material-ui", "ListItemText")
+  @JSImport("@material-ui/core", "ListItemText")
   @js.native
   private object RawComponent extends js.Object
 

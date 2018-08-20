@@ -55,7 +55,7 @@ object Colors {
   object darkWhite extends Key("darkWhite")
   object lightWhite extends Key("lightWhite")
 
-  @JSImport("material-ui", JSImport.Namespace)
+  @JSImport("@material-ui/core", JSImport.Namespace)
   @js.native
   private object RawColors extends js.Object {
     val colors: js.Dictionary[js.Dictionary[String]] = js.native

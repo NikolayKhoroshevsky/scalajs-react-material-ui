@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Divider {
 
-  @JSImport("material-ui", "Divider")
+  @JSImport("@material-ui/core", "Divider")
   @js.native
   private object RawComponent extends js.Object
 

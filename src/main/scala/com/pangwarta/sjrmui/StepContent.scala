@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 
 object StepContent {
 
-  @JSImport("material-ui", "StepContent")
+  @JSImport("@material-ui/core", "StepContent")
   @js.native
   private object RawComponent extends js.Object
 

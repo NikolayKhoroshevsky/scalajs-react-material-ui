@@ -14,7 +14,7 @@ object Collapse {
 
   val auto = "auto"
 
-  @JSImport("material-ui", "Collapse")
+  @JSImport("@material-ui/core", "Collapse")
   @js.native
   private object RawComponent extends js.Object
 

@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object ExpansionPanelDetails {
 
-  @JSImport("material-ui", "ExpansionPanelDetails")
+  @JSImport("@material-ui/core", "ExpansionPanelDetails")
   @js.native
   private object RawComponent extends js.Object
 

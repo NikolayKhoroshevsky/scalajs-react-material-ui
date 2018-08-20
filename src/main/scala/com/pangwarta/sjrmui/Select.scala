@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Select {
 
-  @JSImport("material-ui", "Select")
+  @JSImport("@material-ui/core", "Select")
   @js.native
   private object RawComponent extends js.Object
 

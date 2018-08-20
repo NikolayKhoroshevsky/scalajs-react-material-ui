@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object IconButton {
 
-  @JSImport("material-ui", "IconButton")
+  @JSImport("@material-ui/core", "IconButton")
   @js.native
   private object RawComponent extends js.Object
 
@@ -56,7 +56,7 @@ object IconButton {
     onBlur.foreach(p.updateDynamic("onBlur")(_))
     onClick.foreach(p.updateDynamic("onClick")(_))
     onFocus.foreach(p.updateDynamic("onFocus")(_))
-    onKeyboardFocus.foreach(p.updateDynamic("onKeyboardFocus")(_))
+    onKeyboardFocus.foreach(p.updateDynamic("onFocusVisible")(_))
     onKeyDown.foreach(p.updateDynamic("onKeyDown")(_))
     onKeyUp.foreach(p.updateDynamic("onKeyUp")(_))
     //    onMouseDown.foreach(p.updateDynamic("shadow2")(_))

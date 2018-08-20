@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Slide {
 
-  @JSImport("material-ui", "Fade")
+  @JSImport("@material-ui/core", "Fade")
   @js.native
   private object RawComponent extends js.Object
 

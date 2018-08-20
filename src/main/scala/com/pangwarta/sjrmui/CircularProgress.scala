@@ -9,7 +9,7 @@ import scala.scalajs.js.|
 
 object CircularProgress {
 
-  @JSImport("material-ui", "CircularProgress")
+  @JSImport("@material-ui/core", "CircularProgress")
   @js.native
   private object RawComponent extends js.Object
 

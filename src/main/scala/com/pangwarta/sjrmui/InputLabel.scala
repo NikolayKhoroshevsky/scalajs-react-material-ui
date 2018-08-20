@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object InputLabel {
 
-  @JSImport("material-ui", "InputLabel")
+  @JSImport("@material-ui/core", "InputLabel")
   @js.native
   private object RawComponent extends js.Object
 

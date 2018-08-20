@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object StepLabel {
 
-  @JSImport("material-ui", "StepLabel")
+  @JSImport("@material-ui/core", "StepLabel")
   @js.native
   private object RawComponent extends js.Object
 

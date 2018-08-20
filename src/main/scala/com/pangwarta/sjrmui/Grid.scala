@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object Grid {
 
-  @JSImport("material-ui", "Grid")
+  @JSImport("@material-ui/core", "Grid")
   @js.native
   private object RawComponent extends js.Object
 

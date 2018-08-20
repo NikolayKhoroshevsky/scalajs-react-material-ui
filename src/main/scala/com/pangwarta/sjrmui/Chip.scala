@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object Chip {
 
-  @JSImport("material-ui", "Chip")
+  @JSImport("@material-ui/core", "Chip")
   @js.native
   private object RawComponent extends js.Object
 

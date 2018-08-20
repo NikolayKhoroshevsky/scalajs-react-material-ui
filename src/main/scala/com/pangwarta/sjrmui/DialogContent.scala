@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object DialogContent {
 
-  @JSImport("material-ui", "DialogContent")
+  @JSImport("@material-ui/core", "DialogContent")
   @js.native
   private object RawComponent extends js.Object
 

@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Grow {
 
-  @JSImport("material-ui", "Grow")
+  @JSImport("@material-ui/core", "Grow")
   @js.native
   private object RawComponent extends js.Object
 

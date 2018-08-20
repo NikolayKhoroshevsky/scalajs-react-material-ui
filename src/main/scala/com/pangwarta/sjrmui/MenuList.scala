@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object MenuList {
 
-  @JSImport("material-ui", "MenuList")
+  @JSImport("@material-ui/core", "MenuList")
   @js.native
   object RawComponent extends js.Object
 

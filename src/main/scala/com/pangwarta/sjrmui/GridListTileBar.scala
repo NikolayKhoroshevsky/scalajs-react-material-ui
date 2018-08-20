@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object GridListTileBar {
 
-  @JSImport("material-ui", "GridListTileBar")
+  @JSImport("@material-ui/core", "GridListTileBar")
   @js.native
   private object RawComponent extends js.Object
 

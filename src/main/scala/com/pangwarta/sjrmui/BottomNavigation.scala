@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object BottomNavigation {
 
-  @JSImport("material-ui", "BottomNavigation")
+  @JSImport("@material-ui/core", "BottomNavigation")
   @js.native
   private object RawComponent extends js.Object
 

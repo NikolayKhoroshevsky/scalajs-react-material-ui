@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object CardActions {
 
-  @JSImport("material-ui", "CardActions")
+  @JSImport("@material-ui/core", "CardActions")
   @js.native
   private object RawComponent extends js.Object
 

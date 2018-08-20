@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object ButtonBase {
 
-  @JSImport("material-ui", "ButtonBase")
+  @JSImport("@material-ui/core", "ButtonBase")
   @js.native
   private object RawComponent extends js.Object
 

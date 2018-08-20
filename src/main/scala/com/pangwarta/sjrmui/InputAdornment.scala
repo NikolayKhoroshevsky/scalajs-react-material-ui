@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object InputAdornment {
 
-  @JSImport("material-ui", "InputAdornment")
+  @JSImport("@material-ui/core", "InputAdornment")
   @js.native
   private object RawComponent extends js.Object
 

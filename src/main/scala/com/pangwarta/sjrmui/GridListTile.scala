@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object GridListTile {
 
-  @JSImport("material-ui", "GridListTile")
+  @JSImport("@material-ui/core", "GridListTile")
   @js.native
   private object RawComponent extends js.Object
 

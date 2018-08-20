@@ -13,7 +13,7 @@ import scala.scalajs.js.|
 
 object Popover {
 
-  @JSImport("material-ui", "Popover")
+  @JSImport("@material-ui/core", "Popover")
   @js.native
   private object RawComponent extends js.Object
 

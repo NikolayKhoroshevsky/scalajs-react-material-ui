@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 
 object Snackbar {
 
-  @JSImport("material-ui", "Snackbar")
+  @JSImport("@material-ui/core", "Snackbar")
   @js.native
   private object RawComponent extends js.Object
 

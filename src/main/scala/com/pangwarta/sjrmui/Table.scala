@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Table {
 
-  @JSImport("material-ui", "Table")
+  @JSImport("@material-ui/core", "Table")
   @js.native
   private object RawComponent extends js.Object
 

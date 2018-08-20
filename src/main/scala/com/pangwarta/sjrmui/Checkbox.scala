@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 
 object Checkbox {
 
-  @JSImport("material-ui", "Checkbox")
+  @JSImport("@material-ui/core", "Checkbox")
   @js.native
   private object RawComponent extends js.Object
 

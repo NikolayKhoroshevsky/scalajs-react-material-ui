@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Toolbar {
 
-  @JSImport("material-ui", "Toolbar")
+  @JSImport("@material-ui/core", "Toolbar")
   @js.native
   private object RawComponent extends js.Object
 

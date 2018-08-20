@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object SvgIcon {
 
-  @JSImport("material-ui", "SvgIcon")
+  @JSImport("@material-ui/core", "SvgIcon")
   @js.native
   private object RawComponent extends js.Object
 

@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object BottomNavigationAction {
 
-  @JSImport("material-ui", "BottomNavigationAction")
+  @JSImport("@material-ui/core", "BottomNavigationAction")
   @js.native
   private object RawComponent extends js.Object
 
@@ -59,7 +59,7 @@ object BottomNavigationAction {
     onBlur.foreach(v => p.updateDynamic("onBlur")(v))
     onClick.foreach(v => p.updateDynamic("onClick")(v))
     onFocus.foreach(v => p.updateDynamic("onFocus")(v))
-    onKeyboardFocus.foreach(v => p.updateDynamic("onKeyboardFocus")(v))
+    onKeyboardFocus.foreach(v => p.updateDynamic("onFocusVisible")(v))
     onKeyDown.foreach(v => p.updateDynamic("onKeyDown")(v))
     onKeyUp.foreach(v => p.updateDynamic("onKeyUp")(v))
     onMouseDown.foreach(v => p.updateDynamic("onMouseDown")(v))

@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object FormLabel {
 
-  @JSImport("material-ui", "FormLabel")
+  @JSImport("@material-ui/core", "FormLabel")
   @js.native
   private object RawComponent extends js.Object
 

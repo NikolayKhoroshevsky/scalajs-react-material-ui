@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object FormControl {
 
-  @JSImport("material-ui", "FormControl")
+  @JSImport("@material-ui/core", "FormControl")
   @js.native
   private object RawComponent extends js.Object
 

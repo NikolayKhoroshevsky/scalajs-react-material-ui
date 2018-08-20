@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 import japgolly.scalajs.react.Children.Varargs
 object CardMedia {
 
-  @JSImport("material-ui", "CardMedia")
+  @JSImport("@material-ui/core", "CardMedia")
   @js.native
   private object RawComponent extends js.Object
 

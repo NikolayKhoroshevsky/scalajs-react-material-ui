@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Modal {
 
-  @JSImport("material-ui", "Modal")
+  @JSImport("@material-ui/core", "Modal")
   @js.native
   private object RawComponent extends js.Object
 

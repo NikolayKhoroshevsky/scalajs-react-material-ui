@@ -11,7 +11,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object ListItemSecondaryAction {
 
-  @JSImport("material-ui", "ListItemSecondaryAction")
+  @JSImport("@material-ui/core", "ListItemSecondaryAction")
   @js.native
   private object RawComponent extends js.Object
 

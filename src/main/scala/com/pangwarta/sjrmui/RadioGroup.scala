@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object RadioGroup {
 
-  @JSImport("material-ui", "RadioGroup")
+  @JSImport("@material-ui/core", "RadioGroup")
   @js.native
   private object RawComponent extends js.Object
 

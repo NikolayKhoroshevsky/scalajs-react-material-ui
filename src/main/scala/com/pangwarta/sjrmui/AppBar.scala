@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object AppBar {
 
-  @JSImport("material-ui", "AppBar")
+  @JSImport("@material-ui/core", "AppBar")
   @js.native
   private object RawComponent extends js.Object
 

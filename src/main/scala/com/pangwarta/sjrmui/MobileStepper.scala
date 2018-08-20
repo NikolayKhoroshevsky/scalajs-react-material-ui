@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object MobileStepper {
 
-  @JSImport("material-ui", "MobileStepper")
+  @JSImport("@material-ui/core", "MobileStepper")
   @js.native
   private object RawComponent extends js.Object
 

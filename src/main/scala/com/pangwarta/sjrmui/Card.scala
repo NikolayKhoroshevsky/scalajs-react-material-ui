@@ -12,7 +12,7 @@ import scala.scalajs.js.|
 
 object Card {
 
-  @JSImport("material-ui", "Card")
+  @JSImport("@material-ui/core", "Card")
   @js.native
   private object RawComponent extends js.Object
 

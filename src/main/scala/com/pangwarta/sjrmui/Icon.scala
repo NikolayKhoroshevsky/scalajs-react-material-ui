@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Icon {
 
-  @JSImport("material-ui", "Icon")
+  @JSImport("@material-ui/core", "Icon")
   @js.native
   private object RawComponent extends js.Object
 

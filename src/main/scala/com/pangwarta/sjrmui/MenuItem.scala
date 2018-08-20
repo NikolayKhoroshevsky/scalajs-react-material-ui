@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object MenuItem {
 
-  @JSImport("material-ui", "MenuItem")
+  @JSImport("@material-ui/core", "MenuItem")
   @js.native
   private object RawComponent extends js.Object
 

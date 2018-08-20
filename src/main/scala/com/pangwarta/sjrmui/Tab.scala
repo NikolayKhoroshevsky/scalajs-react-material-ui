@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Tab {
 
-  @JSImport("material-ui", "Tab")
+  @JSImport("@material-ui/core", "Tab")
   @js.native
   private object RawComponent extends js.Object
 

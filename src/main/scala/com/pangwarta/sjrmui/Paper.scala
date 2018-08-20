@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Paper {
 
-  @JSImport("material-ui", "Paper")
+  @JSImport("@material-ui/core", "Paper")
   @js.native
   private object RawComponent extends js.Object
 

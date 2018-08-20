@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Button {
 
-  @JSImport("material-ui", "Button")
+  @JSImport("@material-ui/core", "Button")
   @js.native
   private object RawComponent extends js.Object
 
@@ -94,7 +94,7 @@ object Button {
     onBlur.foreach(p.updateDynamic("onBlur")(_))
     onClick.foreach(p.updateDynamic("onClick")(_))
     onFocus.foreach(p.updateDynamic("onFocus")(_))
-    onKeyboardFocus.foreach(p.updateDynamic("onKeyboardFocus")(_))
+    onKeyboardFocus.foreach(p.updateDynamic("onFocusVisible")(_))
     onKeyDown.foreach(p.updateDynamic("onKeyDown")(_))
     onKeyUp.foreach(p.updateDynamic("onKeyUp")(_))
     onMouseDown.foreach(p.updateDynamic("onMouseDown")(_))

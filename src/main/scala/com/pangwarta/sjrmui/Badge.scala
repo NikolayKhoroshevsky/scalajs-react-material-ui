@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object Badge {
 
-  @JSImport("material-ui", "Badge")
+  @JSImport("@material-ui/core", "Badge")
   @js.native
   private object RawComponent extends js.Object
 

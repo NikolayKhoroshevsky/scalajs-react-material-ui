@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object StepIcon {
 
-  @JSImport("material-ui", "StepIcon")
+  @JSImport("@material-ui/core", "StepIcon")
   @js.native
   private object RawComponent extends js.Object
 

@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object Portal {
 
-  @JSImport("material-ui", "Portal")
+  @JSImport("@material-ui/core", "Portal")
   @js.native
   private object RawComponent extends js.Object
 

@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Tabs {
 
-  @JSImport("material-ui", "Tabs")
+  @JSImport("@material-ui/core", "Tabs")
   @js.native
   private object RawComponent extends js.Object
 

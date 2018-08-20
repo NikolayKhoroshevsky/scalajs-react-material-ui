@@ -13,7 +13,7 @@ object Avatar {
 
   type Type = UnmountedWithRawType[Avatar.Props, Null, RawMounted[Avatar.Props, Null]]
 
-  @JSImport("material-ui", "Avatar")
+  @JSImport("@material-ui/core", "Avatar")
   @js.native
   private object RawComponent extends js.Object
 

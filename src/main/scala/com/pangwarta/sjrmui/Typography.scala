@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Typography {
 
-  @JSImport("material-ui", "Typography")
+  @JSImport("@material-ui/core", "Typography")
   @js.native
   private object RawComponent extends js.Object
 

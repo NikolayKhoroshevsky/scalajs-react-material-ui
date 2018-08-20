@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object FormGroup {
 
-  @JSImport("material-ui", "FormGroup")
+  @JSImport("@material-ui/core", "FormGroup")
   @js.native
   private object RawComponent extends js.Object
 

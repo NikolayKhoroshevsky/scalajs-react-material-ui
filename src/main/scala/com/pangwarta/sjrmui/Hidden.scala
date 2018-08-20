@@ -12,7 +12,7 @@ import scala.scalajs.js.JSConverters._
 
 object Hidden {
 
-  @JSImport("material-ui", "Hidden")
+  @JSImport("@material-ui/core", "Hidden")
   @js.native
   private object RawComponent extends js.Object
 

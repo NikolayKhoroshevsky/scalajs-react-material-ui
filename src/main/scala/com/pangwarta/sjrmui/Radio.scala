@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object Radio {
 
-  @JSImport("material-ui", "Radio")
+  @JSImport("@material-ui/core", "Radio")
   @js.native
   private object RawComponent extends js.Object
 

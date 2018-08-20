@@ -10,7 +10,7 @@ import scala.scalajs.js.|
 
 object ListSubheader {
 
-  @JSImport("material-ui", "ListSubheader")
+  @JSImport("@material-ui/core", "ListSubheader")
   @js.native
   private object RawComponent extends js.Object
 

@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Backdrop {
 
-  @JSImport("material-ui", "Backdrop")
+  @JSImport("@material-ui/core", "Backdrop")
   @js.native
   private object RawComponent extends js.Object
 

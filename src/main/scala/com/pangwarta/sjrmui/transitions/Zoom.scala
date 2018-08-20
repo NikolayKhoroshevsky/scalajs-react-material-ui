@@ -12,7 +12,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Zoom {
 
-  @JSImport("material-ui", "Zoom")
+  @JSImport("@material-ui/core", "Zoom")
   @js.native
   private object RawComponent extends js.Object
 

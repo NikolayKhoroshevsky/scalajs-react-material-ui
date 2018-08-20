@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object TableSortLabel {
 
-  @JSImport("material-ui", "TableSortLabel")
+  @JSImport("@material-ui/core", "TableSortLabel")
   @js.native
   private object RawComponent extends js.Object
 

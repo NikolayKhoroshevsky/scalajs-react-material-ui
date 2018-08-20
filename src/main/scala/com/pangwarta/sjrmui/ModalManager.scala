@@ -3,7 +3,7 @@ package com.pangwarta.sjrmui
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
-@JSImport("material-ui", "ModalManager")
+@JSImport("@material-ui/core", "ModalManager")
 @js.native
 class ModalManager(opts: js.UndefOr[ModalManager.Opts] = js.undefined) extends js.Any {
   def add(modal: js.Any, container: js.Any): Int = js.native
