@@ -4,7 +4,8 @@ import cats.Show
 import com.pangwarta.sjrmui.internal.Transition
 import japgolly.scalajs.react.Callback
 import japgolly.scalajs.react.component.Js.UnmountedWithRawType
-import japgolly.scalajs.react.raw.{ ReactElement, SyntheticEvent }
+import japgolly.scalajs.react.raw.React._
+import japgolly.scalajs.react.raw.SyntheticEvent
 
 import scala.language.implicitConversions
 import scala.scalajs.js
@@ -52,7 +53,7 @@ package object sjrmui {
   private[sjrmui] implicit def toOn2[E, A](on: js.UndefOr[(E, A) => Callback]): OptJsFun2[E, A] =
     js.UndefOr.any2undefOrA((e: E, a: A) => on.map(_(e, a).runNow()).getOrElse(()))
 
-  private[sjrmui] implicit def unmountedToReactElement(unmounted: js.UndefOr[UnmountedWithRawType[_, _, _]]): js.UndefOr[ReactElement] =
+  private[sjrmui] implicit def unmountedToElement(unmounted: js.UndefOr[UnmountedWithRawType[_, _, _]]): js.UndefOr[Element] =
     unmounted.map(_.vdomElement.rawElement)
 
   private[sjrmui] implicit def unionToJsAny[A, B](union: A | B): js.Any =

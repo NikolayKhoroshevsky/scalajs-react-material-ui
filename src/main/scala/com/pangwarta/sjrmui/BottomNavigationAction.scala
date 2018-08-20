@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -16,8 +17,8 @@ object BottomNavigationAction {
 
   @js.native
   private[sjrmui] trait Props[A] extends ButtonBase.Props {
-    var icon: js.UndefOr[String | ReactElement] = js.native
-    var label: js.UndefOr[String | ReactElement] = js.native
+    var icon: js.UndefOr[String | Element] = js.native
+    var label: js.UndefOr[String | Element] = js.native
     var showLabel: js.UndefOr[Boolean] = js.native
     var value: js.UndefOr[A] = js.native
   }
@@ -42,8 +43,8 @@ object BottomNavigationAction {
       onTouchMove:              OnJSEv1[ReactTouchEvent],
       onTouchStart:             OnJSEv1[ReactTouchEvent],
       role:                     js.UndefOr[String],
-      icon:                     js.UndefOr[String | ReactElement],
-      label:                    js.UndefOr[String | ReactElement],
+      icon:                     js.UndefOr[String | Element],
+      label:                    js.UndefOr[String | Element],
       onChange:                 OnJSEv2[ReactEvent, A],
       showLabel:                js.UndefOr[Boolean],
       value:                    js.UndefOr[A],
@@ -87,14 +88,14 @@ object BottomNavigationAction {
   object hiddenLabel extends ClassKey("hiddenLabel")
   object icon extends ClassKey("icon")
 
-  private def component[A] = JsComponent[Props[A], Children.Varargs, Null](RawComponent)
+  private def component[A] = JsComponent[Props[A], Varargs, Null](RawComponent)
 
   def apply[A](
       centerRipple:             js.UndefOr[Boolean]               = js.undefined,
       classes:                  Map[ClassKey, String]             = Map.empty,
       className:                js.UndefOr[String]                = js.undefined,
-      icon:                     js.UndefOr[String | ReactElement] = js.undefined,
-      label:                    js.UndefOr[String | ReactElement] = js.undefined,
+      icon:                     js.UndefOr[String | Element]      = js.undefined,
+      label:                    js.UndefOr[String | Element]      = js.undefined,
       onChange:                 ReactHandler2[ReactEvent, A]      = js.undefined,
       onClick:                  ReactHandler1[ReactMouseEvent]    = js.undefined,
       selected:                 js.UndefOr[Boolean]               = js.undefined,

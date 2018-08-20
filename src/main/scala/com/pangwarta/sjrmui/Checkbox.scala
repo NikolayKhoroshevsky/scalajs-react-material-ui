@@ -3,7 +3,8 @@ package com.pangwarta.sjrmui
 import BottomNavigationAction.icon
 import icons.MuiSvgIcons._
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw._
+import japgolly.scalajs.react.Children.None
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -18,17 +19,17 @@ object Checkbox {
   @js.native
   private[sjrmui] trait Props extends js.Object {
     var checked: js.UndefOr[Boolean | String] = js.native
-    var checkedIcon: js.UndefOr[ReactNode] = js.native
+    var checkedIcon: js.UndefOr[Node] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var defaultChecked: js.UndefOr[Boolean] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var disableRipple: js.UndefOr[Boolean] = js.native
-    var icon: js.UndefOr[ReactElement] = js.native
+    var icon: js.UndefOr[Element] = js.native
     var indeterminate: js.UndefOr[Boolean] = js.native
-    var indeterminateIcon: js.UndefOr[ReactNode | String] = js.native
+    var indeterminateIcon: js.UndefOr[Node | String] = js.native
     var inputProps: js.Dictionary[String] = js.native
-    var inputRef: js.UndefOr[RefFn] = js.native
+    var inputRef: js.UndefOr[RefFn[String]] = js.native
     var inputType: js.UndefOr[String] = js.native
     var name: js.UndefOr[String] = js.native
     var onChange: OnJSEv2[ReactEvent, Boolean] = js.native
@@ -38,15 +39,15 @@ object Checkbox {
 
   private def props(
       checked:           js.UndefOr[Boolean | String],
-      checkedIcon:       js.UndefOr[ReactNode],
+      checkedIcon:       js.UndefOr[Node],
       classes:           js.Dictionary[String],
       className:         js.UndefOr[String],
       defaultChecked:    js.UndefOr[Boolean],
       disabled:          js.UndefOr[Boolean],
       disableRipple:     js.UndefOr[Boolean],
-      icon:              js.UndefOr[ReactElement],
+      icon:              js.UndefOr[Element],
       indeterminate:     js.UndefOr[Boolean],
-      indeterminateIcon: js.UndefOr[ReactNode | String],
+      indeterminateIcon: js.UndefOr[Node | String],
       inputProps:        js.Dictionary[String],
       inputRef:          js.UndefOr[js.Function],
       name:              js.UndefOr[String],
@@ -82,21 +83,21 @@ object Checkbox {
   object checked extends ClassKey("checked")
   object disabled extends ClassKey("disabled")
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       checked:           js.UndefOr[Boolean | String]       = js.undefined,
-      checkedIcon:       js.UndefOr[ReactElement]           = js.undefined,
+      checkedIcon:       js.UndefOr[Element]                = js.undefined,
       classes:           Map[ClassKey, String]              = Map.empty,
       className:         js.UndefOr[String]                 = js.undefined,
       defaultChecked:    js.UndefOr[Boolean]                = js.undefined,
       disabled:          js.UndefOr[Boolean]                = js.undefined,
       disableRipple:     js.UndefOr[Boolean]                = js.undefined,
-      icon:              js.UndefOr[ReactElement]           = js.undefined,
+      icon:              js.UndefOr[Element]                = js.undefined,
       indeterminate:     js.UndefOr[Boolean]                = js.undefined,
-      indeterminateIcon: js.UndefOr[ReactNode | String]     = js.undefined,
+      indeterminateIcon: js.UndefOr[Node | String]          = js.undefined,
       inputProps:        Map[String, String]                = Map.empty,
-      inputRef:          js.UndefOr[RefFn]                  = js.undefined,
+      inputRef:          js.UndefOr[RefFn[String]]          = js.undefined,
       name:              js.UndefOr[String]                 = js.undefined,
       onChange:          ReactHandler2[ReactEvent, Boolean] = js.undefined,
       tabIndex:          js.UndefOr[Int | String]           = js.undefined,

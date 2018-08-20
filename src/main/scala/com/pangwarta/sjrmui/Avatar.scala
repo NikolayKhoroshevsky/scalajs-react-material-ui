@@ -1,8 +1,8 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.component.Js.{ RawMounted, UnmountedWithRawType }
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -11,7 +11,7 @@ import scala.scalajs.js.|
 
 object Avatar {
 
-  type Type = UnmountedWithRawType[Avatar.Props, Null, RawMounted]
+  type Type = UnmountedWithRawType[Avatar.Props, Null, RawMounted[Avatar.Props, Null]]
 
   @JSImport("material-ui", "Avatar")
   @js.native
@@ -23,7 +23,7 @@ object Avatar {
     var childrenClassName: js.UndefOr[String] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var imgProps: js.Dictionary[String] = js.native
     var sizes: js.UndefOr[String] = js.native
     var src: js.UndefOr[String] = js.native
@@ -35,7 +35,7 @@ object Avatar {
       childrenClassName: js.UndefOr[String],
       classes:           js.Dictionary[String],
       className:         js.UndefOr[String],
-      component:         js.UndefOr[String | ReactElement],
+      component:         js.UndefOr[String | Element],
       imgProps:          js.Dictionary[String],
       sizes:             js.UndefOr[String],
       src:               js.UndefOr[String],
@@ -62,18 +62,18 @@ object Avatar {
   object colorDefault extends ClassKey("colorDefault")
   object img extends ClassKey("img")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      alt:               js.UndefOr[String]                = js.undefined,
-      childrenClassName: js.UndefOr[String]                = js.undefined,
-      classes:           Map[ClassKey, String]             = Map.empty,
-      className:         js.UndefOr[String]                = js.undefined,
-      component:         js.UndefOr[String | ReactElement] = js.undefined,
-      imgProps:          Map[String, String]               = Map.empty,
-      sizes:             js.UndefOr[String]                = js.undefined,
-      src:               js.UndefOr[String]                = js.undefined,
-      srcSet:            js.UndefOr[String]                = js.undefined
+      alt:               js.UndefOr[String]           = js.undefined,
+      childrenClassName: js.UndefOr[String]           = js.undefined,
+      classes:           Map[ClassKey, String]        = Map.empty,
+      className:         js.UndefOr[String]           = js.undefined,
+      component:         js.UndefOr[String | Element] = js.undefined,
+      imgProps:          Map[String, String]          = Map.empty,
+      sizes:             js.UndefOr[String]           = js.undefined,
+      src:               js.UndefOr[String]           = js.undefined,
+      srcSet:            js.UndefOr[String]           = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*): Avatar.Type = {
     val p = props(
       alt,

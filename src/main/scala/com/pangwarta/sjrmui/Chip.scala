@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.Children.None
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -15,11 +16,11 @@ object Chip {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var avatar: js.UndefOr[ReactElement] = js.native
+    var avatar: js.UndefOr[Element] = js.native
     var className: js.UndefOr[String] = js.native
     var classes: js.Dictionary[String] = js.native
-    var deleteIcon: js.UndefOr[ReactElement] = js.native
-    var label: js.UndefOr[ReactElement] = js.native
+    var deleteIcon: js.UndefOr[Element] = js.native
+    var label: js.UndefOr[Element] = js.native
     var onClick: OnJSEv1[ReactMouseEvent] = js.native
     var onKeyDown: OnJSEv1[ReactKeyboardEvent] = js.native
     var onRequestDelete: OnJSEv1[ReactEvent] = js.native
@@ -27,11 +28,11 @@ object Chip {
   }
 
   private def props(
-      avatar:     js.UndefOr[ReactElement],
+      avatar:     js.UndefOr[Element],
       className:  js.UndefOr[String],
       classes:    js.Dictionary[String],
-      deleteIcon: js.UndefOr[ReactElement],
-      label:      js.UndefOr[ReactElement],
+      deleteIcon: js.UndefOr[Element],
+      label:      js.UndefOr[Element],
       onClick:    OnJSEv1[ReactMouseEvent],
       onKeyDown:  OnJSEv1[ReactKeyboardEvent],
       onDelete:   OnJSEv1[ReactEvent],
@@ -60,14 +61,14 @@ object Chip {
   object label extends ClassKey("label")
   object deleteIcon extends ClassKey("deleteIcon")
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       avatar:     js.UndefOr[Avatar.Type]           = js.undefined,
       className:  js.UndefOr[String]                = js.undefined,
       classes:    Map[ClassKey, String]             = Map.empty,
-      deleteIcon: js.UndefOr[ReactElement]          = js.undefined,
-      label:      js.UndefOr[ReactElement]          = js.undefined,
+      deleteIcon: js.UndefOr[Element]               = js.undefined,
+      label:      js.UndefOr[Element]               = js.undefined,
       onClick:    ReactHandler1[ReactMouseEvent]    = js.undefined,
       onKeyDown:  ReactHandler1[ReactKeyboardEvent] = js.undefined,
       onDelete:   ReactHandler1[ReactEvent]         = js.undefined,

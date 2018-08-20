@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -24,7 +25,7 @@ object Table {
   private def props(
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       otherProps: (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes)
@@ -36,12 +37,12 @@ object Table {
   sealed abstract case class ClassKey(get: String) extends StringType
   object root extends ClassKey("root")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      component: js.UndefOr[String | ReactElement] = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      component: js.UndefOr[String | Element] = js.undefined
   )
     (otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

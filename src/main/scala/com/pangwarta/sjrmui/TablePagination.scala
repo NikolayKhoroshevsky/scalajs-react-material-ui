@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -22,7 +23,7 @@ object TablePagination {
     var component: js.UndefOr[Boolean | String] = js.native
     var count: js.UndefOr[Int] = js.native
     var labelDisplayedRows: OnJSEv1[ReactEvent] = js.native
-    var labelRowsPerPage: js.UndefOr[String | ReactElement] = js.native
+    var labelRowsPerPage: js.UndefOr[String | Element] = js.native
     var nextIconButtonProps: js.UndefOr[Object] = js.native
     var onChangePage: OnJSEv1[ReactEvent] = js.native
     var onChangeRowsPerPage: OnJSEv1[ReactEvent] = js.native
@@ -39,7 +40,7 @@ object TablePagination {
       component:           js.UndefOr[Boolean | String],
       count:               js.UndefOr[Int],
       labelDisplayedRows:  OnJSEv1[ReactEvent],
-      labelRowsPerPage:    js.UndefOr[String | ReactElement],
+      labelRowsPerPage:    js.UndefOr[String | Element],
       nextIconButtonProps: js.UndefOr[Object],
       onChangePage:        OnJSEv1[ReactEvent],
       onChangeRowsPerPage: OnJSEv1[ReactEvent],
@@ -75,22 +76,22 @@ object TablePagination {
   object selectRoot extends ClassKey("selectRoot")
   object select extends ClassKey("select")
 
-  private def component[A] = JsComponent[Props[A], Children.Varargs, Null](RawComponent)
+  private def component[A] = JsComponent[Props[A], Varargs, Null](RawComponent)
 
   def apply[A](
-      actions:             js.UndefOr[Boolean | String]      = js.undefined,
-      backIconButtonProps: js.UndefOr[Object]                = js.undefined,
-      classes:             Map[ClassKey, String]             = Map.empty,
-      component:           js.UndefOr[Boolean | String]      = js.undefined,
-      count:               js.UndefOr[Int]                   = js.undefined,
-      labelDisplayedRows:  OnJSEv1[ReactEvent]               = js.undefined,
-      labelRowsPerPage:    js.UndefOr[String | ReactElement] = js.undefined,
-      nextIconButtonProps: js.UndefOr[Object]                = js.undefined,
-      onChangePage:        OnJSEv1[ReactEvent]               = js.undefined,
-      onChangeRowsPerPage: OnJSEv1[ReactEvent]               = js.undefined,
-      page:                js.UndefOr[Int]                   = js.undefined,
-      rowsPerPage:         js.UndefOr[Int]                   = js.undefined,
-      rowsPerPageOptions:  js.UndefOr[js.Array[Int]]         = js.undefined
+      actions:             js.UndefOr[Boolean | String] = js.undefined,
+      backIconButtonProps: js.UndefOr[Object]           = js.undefined,
+      classes:             Map[ClassKey, String]        = Map.empty,
+      component:           js.UndefOr[Boolean | String] = js.undefined,
+      count:               js.UndefOr[Int]              = js.undefined,
+      labelDisplayedRows:  OnJSEv1[ReactEvent]          = js.undefined,
+      labelRowsPerPage:    js.UndefOr[String | Element] = js.undefined,
+      nextIconButtonProps: js.UndefOr[Object]           = js.undefined,
+      onChangePage:        OnJSEv1[ReactEvent]          = js.undefined,
+      onChangeRowsPerPage: OnJSEv1[ReactEvent]          = js.undefined,
+      page:                js.UndefOr[Int]              = js.undefined,
+      rowsPerPage:         js.UndefOr[Int]              = js.undefined,
+      rowsPerPageOptions:  js.UndefOr[js.Array[Int]]    = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props[A](
       actions,

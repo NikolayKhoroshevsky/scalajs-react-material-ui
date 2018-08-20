@@ -1,7 +1,7 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -15,7 +15,7 @@ object Modal {
 
   @js.native
   private[sjrmui] trait Props extends Portal.Props {
-    var BackdropComponent: js.UndefOr[ReactNode] = js.native
+    var BackdropComponent: js.UndefOr[Node] = js.native
     var BackdropProps: js.UndefOr[Backdrop.Props] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
@@ -34,7 +34,7 @@ object Modal {
   }
 
   private def props(
-      BackdropComponent:    js.UndefOr[ReactNode],
+      BackdropComponent:    js.UndefOr[Node],
       BackdropProps:        js.UndefOr[Backdrop.Props],
       classes:              js.Dictionary[String],
       className:            js.UndefOr[String],
@@ -76,10 +76,10 @@ object Modal {
   object root extends ClassKey("root")
   object hidden extends ClassKey("hidden")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      BackdropComponent:    js.UndefOr[ReactNode]                     = js.undefined,
+      BackdropComponent:    js.UndefOr[Node]                          = js.undefined,
       BackdropProps:        js.UndefOr[Backdrop.Props]                = js.undefined,
       classes:              Map[ClassKey, String]                     = Map.empty,
       className:            js.UndefOr[String]                        = js.undefined,

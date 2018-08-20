@@ -3,7 +3,7 @@ package com.pangwarta.sjrmui
 import transitions.Collapse
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
@@ -50,7 +50,7 @@ object ExpansionPanel {
   object expanded extends ClassKey("expanded")
   object disabled extends ClassKey("disabled")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:         Map[ClassKey, String]        = Map.empty,

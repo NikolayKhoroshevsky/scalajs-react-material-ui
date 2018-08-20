@@ -1,7 +1,7 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -16,11 +16,11 @@ object TableFooter {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
   }
 
   private def props(
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       otherProps: (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal()
@@ -29,10 +29,10 @@ object TableFooter {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      component: js.UndefOr[String | ReactElement] = js.undefined
+      component: js.UndefOr[String | Element] = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       component,

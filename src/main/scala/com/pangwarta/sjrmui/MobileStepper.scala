@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -16,10 +17,10 @@ object MobileStepper {
   @js.native
   private[sjrmui] trait Props extends js.Object {
     var activeStep: js.UndefOr[Int] = js.native
-    var backButton: ReactElement = js.native
+    var backButton: Element = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var nextButton: ReactElement = js.native
+    var nextButton: Element = js.native
     var position: js.UndefOr[String] = js.native
     var steps: Int = js.native
     var `type`: js.UndefOr[String] = js.native
@@ -37,10 +38,10 @@ object MobileStepper {
 
   private def props(
       activeStep: js.UndefOr[Int],
-      backButton: ReactElement,
+      backButton: Element,
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      nextButton: ReactElement,
+      nextButton: Element,
       position:   js.UndefOr[String],
       steps:      Int,
       `type`:     js.UndefOr[String],
@@ -60,7 +61,7 @@ object MobileStepper {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   sealed abstract case class ClassKey(get: String) extends StringType
   object ClassKey {
@@ -102,10 +103,10 @@ object MobileStepper {
 
   def apply(
       activeStep: js.UndefOr[Int],
-      backButton: ReactElement,
+      backButton: Element,
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      nextButton: ReactElement,
+      nextButton: Element,
       position:   js.UndefOr[Position],
       steps:      Int,
       `type`:     js.UndefOr[Type]

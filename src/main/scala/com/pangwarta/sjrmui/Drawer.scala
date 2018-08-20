@@ -3,9 +3,9 @@ package com.pangwarta.sjrmui
 import internal.Transition
 import transitions.Slide
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomElement
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
@@ -31,7 +31,7 @@ object Drawer {
   private def props(
       container:            js.UndefOr[js.Any | js.Function],
       onRendered:           js.UndefOr[js.Function0[Unit]],
-      BackdropComponent:    js.UndefOr[ReactNode],
+      BackdropComponent:    js.UndefOr[Node],
       BackdropProps:        js.UndefOr[Backdrop.Props],
       classes:              js.Dictionary[String],
       className:            js.UndefOr[String],
@@ -115,12 +115,12 @@ object Drawer {
     object modal extends ClassKey("modal")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       container:            js.UndefOr[js.Any | js.Function]          = js.undefined,
       onRendered:           js.UndefOr[js.Function0[Unit]]            = js.undefined,
-      BackdropComponent:    js.UndefOr[ReactNode]                     = js.undefined,
+      BackdropComponent:    js.UndefOr[Node]                          = js.undefined,
       BackdropProps:        js.UndefOr[Backdrop.Props]                = js.undefined,
       classes:              Map[ClassKey, String]                     = Map.empty,
       className:            js.UndefOr[String]                        = js.undefined,

@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 import org.scalajs.dom.html
 
@@ -24,11 +25,11 @@ object Input {
     var defaultValue: js.UndefOr[String | Double] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var disableUnderline: js.UndefOr[Boolean] = js.native
-    var endAdornment: js.UndefOr[ReactNode] = js.native
+    var endAdornment: js.UndefOr[Node] = js.native
     var error: js.UndefOr[Boolean] = js.native
     var fullWidth: js.UndefOr[Boolean] = js.native
     var id: js.UndefOr[String] = js.native
-    var inputComponent: js.UndefOr[String | ReactElement] = js.native
+    var inputComponent: js.UndefOr[String | Element] = js.native
     var inputProps: js.UndefOr[js.Object] = js.native // TODO: How to use React.InputHTMLAttributes?
     var inputRef: js.UndefOr[js.Function1[html.Input, Unit]] = js.native
     var margin: js.UndefOr[String] = js.native
@@ -45,7 +46,7 @@ object Input {
     var readOnly: js.UndefOr[Boolean] = js.native
     var rows: js.UndefOr[String | Int] = js.native
     var rowsMax: js.UndefOr[String | Int] = js.native
-    var startAdornment: js.UndefOr[ReactNode] = js.native
+    var startAdornment: js.UndefOr[Node] = js.native
     var `type`: js.UndefOr[String] = js.native
     var value: js.UndefOr[js.Array[String | Double] | String | Double] = js.native
   }
@@ -58,11 +59,11 @@ object Input {
       defaultValue:     js.UndefOr[String | Double],
       disabled:         js.UndefOr[Boolean],
       disableUnderline: js.UndefOr[Boolean],
-      endAdornment:     js.UndefOr[ReactNode],
+      endAdornment:     js.UndefOr[Node],
       error:            js.UndefOr[Boolean],
       fullWidth:        js.UndefOr[Boolean],
       id:               js.UndefOr[String],
-      inputComponent:   js.UndefOr[String | ReactElement],
+      inputComponent:   js.UndefOr[String | Element],
       inputProps:       js.UndefOr[js.Object],
       inputRef:         js.UndefOr[js.Function1[html.Input, Unit]],
       margin:           js.UndefOr[String],
@@ -79,7 +80,7 @@ object Input {
       readOnly:         js.UndefOr[Boolean],
       rows:             js.UndefOr[String | Int],
       rowsMax:          js.UndefOr[String | Int],
-      startAdornment:   js.UndefOr[ReactNode],
+      startAdornment:   js.UndefOr[Node],
       `type`:           js.UndefOr[String],
       value:            js.UndefOr[js.Array[String | Double] | String | Double],
       otherProps:       (String, js.Any)*
@@ -119,7 +120,7 @@ object Input {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   sealed abstract case class ClassKey(get: String) extends StringType
   object root extends ClassKey("root")
@@ -146,11 +147,11 @@ object Input {
       defaultValue:     js.UndefOr[String | Double]                             = js.undefined,
       disabled:         js.UndefOr[Boolean]                                     = js.undefined,
       disableUnderline: js.UndefOr[Boolean]                                     = js.undefined,
-      endAdornment:     js.UndefOr[ReactNode]                                   = js.undefined,
+      endAdornment:     js.UndefOr[Node]                                        = js.undefined,
       error:            js.UndefOr[Boolean]                                     = js.undefined,
       fullWidth:        js.UndefOr[Boolean]                                     = js.undefined,
       id:               js.UndefOr[String]                                      = js.undefined,
-      inputComponent:   js.UndefOr[String | ReactElement]                       = js.undefined,
+      inputComponent:   js.UndefOr[String | Element]                            = js.undefined,
       inputProps:       js.UndefOr[js.Object]                                   = js.undefined,
       inputRef:         js.UndefOr[js.Function1[html.Input, Unit]]              = js.undefined,
       margin:           js.UndefOr[String]                                      = js.undefined,
@@ -167,7 +168,7 @@ object Input {
       readOnly:         js.UndefOr[Boolean]                                     = js.undefined,
       rows:             js.UndefOr[String | Int]                                = js.undefined,
       rowsMax:          js.UndefOr[String | Int]                                = js.undefined,
-      startAdornment:   js.UndefOr[ReactNode]                                   = js.undefined,
+      startAdornment:   js.UndefOr[Node]                                        = js.undefined,
       `type`:           js.UndefOr[String]                                      = js.undefined,
       value:            js.UndefOr[js.Array[String | Double] | String | Double] = js.undefined
   )(otherProps: (String, js.Any)*) = {

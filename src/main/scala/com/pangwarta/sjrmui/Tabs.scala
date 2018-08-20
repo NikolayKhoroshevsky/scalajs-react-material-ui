@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -85,7 +86,7 @@ object Tabs {
   object centered extends ClassKey("centered")
   object buttonAuto extends ClassKey("buttonAuto")
 
-  private def component[A] = JsComponent[Props[A], Children.Varargs, Null](RawComponent)
+  private def component[A] = JsComponent[Props[A], Varargs, Null](RawComponent)
 
   def apply[A](
       classes:            Map[ClassKey, String] = Map.empty,

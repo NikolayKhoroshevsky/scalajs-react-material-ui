@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -38,7 +39,7 @@ object Toolbar {
     object gutters extends ClassKey("gutters")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:        Map[ClassKey, String] = Map.empty,

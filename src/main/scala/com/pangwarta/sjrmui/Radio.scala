@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
-import japgolly.scalajs.react.raw.{ ReactNode, RefFn }
+import japgolly.scalajs.react.Children.None
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react._
 
 import scala.scalajs.js
@@ -24,17 +25,17 @@ object Radio {
 
   private def props(
       checked:        js.UndefOr[Boolean | String],
-      checkedIcon:    js.UndefOr[ReactNode],
+      checkedIcon:    js.UndefOr[Node],
       classes:        js.Dictionary[String],
       className:      js.UndefOr[String],
       color:          js.UndefOr[String],
       defaultChecked: js.UndefOr[Boolean],
       disabled:       js.UndefOr[Boolean],
       disableRipple:  js.UndefOr[Boolean],
-      icon:           js.UndefOr[ReactNode],
+      icon:           js.UndefOr[Node],
       id:             js.UndefOr[String],
       inputProps:     js.UndefOr[js.Object],
-      inputRef:       js.UndefOr[RefFn],
+      inputRef:       js.UndefOr[RefFn[String]],
       name:           js.UndefOr[String],
       onChange:       OnJSEv2[ReactEvent, Boolean],
       tabIndex:       js.UndefOr[Int | String],
@@ -63,23 +64,23 @@ object Radio {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   type ClassKey = SwitchBase.ClassKey
 
   def apply(
       checked:        js.UndefOr[Boolean | String]       = js.undefined,
-      checkedIcon:    js.UndefOr[ReactNode]              = js.undefined,
+      checkedIcon:    js.UndefOr[Node]                   = js.undefined,
       classes:        Map[ClassKey, String]              = Map.empty,
       className:      js.UndefOr[String]                 = js.undefined,
       color:          js.UndefOr[Color]                  = js.undefined,
       defaultChecked: js.UndefOr[Boolean]                = js.undefined,
       disabled:       js.UndefOr[Boolean]                = js.undefined,
       disableRipple:  js.UndefOr[Boolean]                = js.undefined,
-      icon:           js.UndefOr[ReactNode]              = js.undefined,
+      icon:           js.UndefOr[Node]                   = js.undefined,
       id:             js.UndefOr[String]                 = js.undefined,
       inputProps:     js.UndefOr[js.Object]              = js.undefined,
-      inputRef:       js.UndefOr[RefFn]                  = js.undefined,
+      inputRef:       js.UndefOr[RefFn[String]]          = js.undefined,
       name:           js.UndefOr[String]                 = js.undefined,
       onChange:       ReactHandler2[ReactEvent, Boolean] = js.undefined,
       tabIndex:       js.UndefOr[Int | String]           = js.undefined,

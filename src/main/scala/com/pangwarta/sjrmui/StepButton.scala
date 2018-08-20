@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
@@ -14,7 +14,7 @@ object StepButton {
   @js.native
   private object RawComponent extends js.Object
 
-  type Icon = ReactElement | String | Int
+  type Icon = Element | String | Int
 
   @js.native
   private[sjrmui] trait Props extends ButtonBase.Props {
@@ -23,7 +23,7 @@ object StepButton {
     var completed: js.UndefOr[Boolean] = js.native
     var icon: js.UndefOr[StepButton.Icon] = js.native
     var last: js.UndefOr[Boolean] = js.native
-    var optional: js.UndefOr[ReactNode] = js.native
+    var optional: js.UndefOr[Node] = js.native
     var orientation: js.UndefOr[String] = js.native
   }
 
@@ -36,7 +36,7 @@ object StepButton {
       disabled:         js.UndefOr[Boolean],
       icon:             js.UndefOr[StepButton.Icon],
       last:             js.UndefOr[Boolean],
-      optional:         js.UndefOr[ReactNode],
+      optional:         js.UndefOr[Node],
       orientation:      js.UndefOr[String],
       otherProps:       (String, js.Any)*
   ): Props = {
@@ -60,7 +60,7 @@ object StepButton {
     object disabled extends ClassKey("disabled")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       active:           js.UndefOr[Boolean]          = js.undefined,
@@ -71,7 +71,7 @@ object StepButton {
       disabled:         js.UndefOr[Boolean]          = js.undefined,
       icon:             js.UndefOr[StepButton.Icon]  = js.undefined,
       last:             js.UndefOr[Boolean]          = js.undefined,
-      optional:         js.UndefOr[ReactNode]        = js.undefined,
+      optional:         js.UndefOr[Node]             = js.undefined,
       orientation:      js.UndefOr[Step.Orientation] = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

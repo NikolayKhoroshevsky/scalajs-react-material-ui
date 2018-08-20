@@ -1,7 +1,7 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -34,7 +34,7 @@ object AppBar {
   private def props(
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       elevation:  js.UndefOr[Int],
       square:     js.UndefOr[Boolean],
       color:      js.UndefOr[String],
@@ -61,16 +61,16 @@ object AppBar {
   object colorPrimary extends ClassKey("colorPrimary")
   object colorAccent extends ClassKey("colorAccent")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      component: js.UndefOr[String | ReactElement] = js.undefined,
-      elevation: js.UndefOr[Int]                   = js.undefined,
-      square:    js.UndefOr[Boolean]               = js.undefined,
-      color:     js.UndefOr[Color]                 = js.undefined,
-      position:  js.UndefOr[Position]              = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      component: js.UndefOr[String | Element] = js.undefined,
+      elevation: js.UndefOr[Int]              = js.undefined,
+      square:    js.UndefOr[Boolean]          = js.undefined,
+      color:     js.UndefOr[Color]            = js.undefined,
+      position:  js.UndefOr[Position]         = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, RefFn }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.language.higherKinds
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ JSImport, JSName }
@@ -17,11 +17,11 @@ object ButtonBase {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var buttonRef: RefFn = js.native
+    var buttonRef: RefFn[String] = js.native
     var centerRipple: Boolean = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: String | ReactElement = js.native
+    var component: String | Element = js.native
     var disabled: Boolean = js.native
     var disableRipple: Boolean = js.native
     var focusRipple: Boolean = js.native
@@ -49,7 +49,7 @@ object ButtonBase {
       centerRipple:             js.UndefOr[Boolean],
       classes:                  js.Dictionary[String],
       className:                js.UndefOr[String],
-      component:                js.UndefOr[String | ReactElement],
+      component:                js.UndefOr[String | Element],
       disableRipple:            js.UndefOr[Boolean],
       disabled:                 js.UndefOr[Boolean],
       focusRipple:              js.UndefOr[Boolean],
@@ -81,7 +81,7 @@ object ButtonBase {
     onBlur.foreach(p.updateDynamic("onBlur")(_))
     onClick.foreach(p.updateDynamic("onClick")(_))
     onFocus.foreach(p.updateDynamic("onFocus")(_))
-    onKeyboardFocus.foreach(p.updateDynamic("onKeyboardFocus")(_))
+    onKeyboardFocus.foreach(p.updateDynamic("onFocusVisible")(_))
     onKeyDown.foreach(p.updateDynamic("onKeyDown")(_))
     onKeyUp.foreach(p.updateDynamic("onKeyUp")(_))
     onMouseDown.foreach(p.updateDynamic("onMouseDown")(_))
@@ -100,13 +100,13 @@ object ButtonBase {
   object root extends ClassKey("root")
   object disabled extends ClassKey("disabled")
 
-  private def component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private def component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       centerRipple:             js.UndefOr[Boolean]               = js.undefined,
       classes:                  Map[ClassKey, String]             = Map.empty,
       className:                js.UndefOr[String]                = js.undefined,
-      component:                js.UndefOr[String | ReactElement] = js.undefined,
+      component:                js.UndefOr[String | Element]      = js.undefined,
       disableRipple:            js.UndefOr[Boolean]               = js.undefined,
       disabled:                 js.UndefOr[Boolean]               = js.undefined,
       focusRipple:              js.UndefOr[Boolean]               = js.undefined,

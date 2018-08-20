@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
@@ -19,7 +19,7 @@ object ListSubheader {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var color: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var disableSticky: js.UndefOr[Boolean] = js.native
     var inset: js.UndefOr[Boolean] = js.native
   }
@@ -36,7 +36,7 @@ object ListSubheader {
       classes:       js.Dictionary[String],
       className:     js.UndefOr[String],
       color:         js.UndefOr[String],
-      component:     js.UndefOr[String | ReactElement],
+      component:     js.UndefOr[String | Element],
       disableSticky: js.UndefOr[Boolean],
       inset:         js.UndefOr[Boolean],
       otherProps:    (String, js.Any)*
@@ -58,15 +58,15 @@ object ListSubheader {
   object inset extends ClassKey("inset")
   object sticky extends ClassKey("sticky")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:       Map[ClassKey, String]             = Map.empty,
-      className:     js.UndefOr[String]                = js.undefined,
-      color:         js.UndefOr[String]                = js.undefined,
-      component:     js.UndefOr[String | ReactElement] = js.undefined,
-      disableSticky: js.UndefOr[Boolean]               = js.undefined,
-      inset:         js.UndefOr[Boolean]               = js.undefined
+      classes:       Map[ClassKey, String]        = Map.empty,
+      className:     js.UndefOr[String]           = js.undefined,
+      color:         js.UndefOr[String]           = js.undefined,
+      component:     js.UndefOr[String | Element] = js.undefined,
+      disableSticky: js.UndefOr[Boolean]          = js.undefined,
+      inset:         js.UndefOr[Boolean]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

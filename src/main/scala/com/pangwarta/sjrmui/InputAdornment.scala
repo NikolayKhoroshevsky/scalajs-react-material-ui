@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.Children.Varargs
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -18,7 +19,7 @@ object InputAdornment {
   private[sjrmui] trait Props extends js.Object {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var disableTypography: js.UndefOr[Boolean] = js.native
     var position: js.UndefOr[String] = js.native
   }
@@ -32,7 +33,7 @@ object InputAdornment {
   private def props(
       classes:           js.Dictionary[String],
       className:         js.UndefOr[String],
-      component:         js.UndefOr[String | ReactElement],
+      component:         js.UndefOr[String | Element],
       disableTypography: js.UndefOr[Boolean],
       position:          js.UndefOr[String],
       otherProps:        (String, js.Any)*
@@ -46,16 +47,16 @@ object InputAdornment {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   sealed abstract case class ClassKey(get: String) extends StringType
 
   def apply(
-      classes:           Map[ClassKey, String]             = Map.empty,
-      className:         js.UndefOr[String]                = js.undefined,
-      component:         js.UndefOr[String | ReactElement] = js.undefined,
-      disableTypography: js.UndefOr[Boolean]               = js.undefined,
-      position:          js.UndefOr[Position]              = js.undefined
+      classes:           Map[ClassKey, String]        = Map.empty,
+      className:         js.UndefOr[String]           = js.undefined,
+      component:         js.UndefOr[String | Element] = js.undefined,
+      disableTypography: js.UndefOr[Boolean]          = js.undefined,
+      position:          js.UndefOr[Position]         = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

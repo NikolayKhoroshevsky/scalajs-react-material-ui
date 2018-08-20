@@ -1,5 +1,5 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import styles.Breakpoint
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
@@ -70,7 +70,7 @@ object Hidden {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   sealed abstract case class Implementation(get: String) extends StringType
   object Implementation {

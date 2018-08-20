@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -24,7 +25,7 @@ object MenuItem {
       button:         js.UndefOr[Boolean],
       classes:        js.Dictionary[String],
       className:      js.UndefOr[String],
-      component:      js.UndefOr[String | ReactElement],
+      component:      js.UndefOr[String | Element],
       dense:          js.UndefOr[Boolean],
       disabled:       js.UndefOr[Boolean],
       disableGutters: js.UndefOr[Boolean],
@@ -59,19 +60,19 @@ object MenuItem {
   object root extends ClassKey("root")
   object secondaryAction extends ClassKey("secondaryAction")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      button:         js.UndefOr[Boolean]               = js.undefined,
-      classes:        Map[ClassKey, String]             = Map.empty,
-      className:      js.UndefOr[String]                = js.undefined,
-      component:      js.UndefOr[String | ReactElement] = js.undefined,
-      dense:          js.UndefOr[Boolean]               = js.undefined,
-      disabled:       js.UndefOr[Boolean]               = js.undefined,
-      disableGutters: js.UndefOr[Boolean]               = js.undefined,
-      divider:        js.UndefOr[Boolean]               = js.undefined,
-      role:           js.UndefOr[String]                = js.undefined,
-      selected:       js.UndefOr[Boolean]               = js.undefined
+      button:         js.UndefOr[Boolean]          = js.undefined,
+      classes:        Map[ClassKey, String]        = Map.empty,
+      className:      js.UndefOr[String]           = js.undefined,
+      component:      js.UndefOr[String | Element] = js.undefined,
+      dense:          js.UndefOr[Boolean]          = js.undefined,
+      disabled:       js.UndefOr[Boolean]          = js.undefined,
+      disableGutters: js.UndefOr[Boolean]          = js.undefined,
+      divider:        js.UndefOr[Boolean]          = js.undefined,
+      role:           js.UndefOr[String]           = js.undefined,
+      selected:       js.UndefOr[Boolean]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       button,

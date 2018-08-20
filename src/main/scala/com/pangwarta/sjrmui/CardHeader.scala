@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
@@ -15,19 +15,19 @@ object CardHeader {
 
   @js.native
   private[sjrmui] trait Props extends CardContent.Props {
-    var action: js.UndefOr[ReactElement] = js.native
-    var avatar: js.UndefOr[ReactElement] = js.native
+    var action: js.UndefOr[Element] = js.native
+    var avatar: js.UndefOr[Element] = js.native
     var classes: js.Dictionary[String] = js.native
-    var subheader: js.UndefOr[ReactElement] = js.native
-    var title: js.UndefOr[ReactElement] = js.native
+    var subheader: js.UndefOr[Element] = js.native
+    var title: js.UndefOr[Element] = js.native
   }
 
   private def props(
-      action:     js.UndefOr[ReactElement],
-      avatar:     js.UndefOr[ReactElement],
+      action:     js.UndefOr[Element],
+      avatar:     js.UndefOr[Element],
       classes:    js.Dictionary[String],
-      subheader:  js.UndefOr[ReactElement],
-      title:      js.UndefOr[ReactElement],
+      subheader:  js.UndefOr[Element],
+      title:      js.UndefOr[Element],
       otherProps: (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes)
@@ -47,14 +47,14 @@ object CardHeader {
   object title extends ClassKey("title")
   object subheader extends ClassKey("subheader")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      action:    js.UndefOr[ReactElement] = js.undefined,
-      avatar:    js.UndefOr[ReactElement] = js.undefined,
-      classes:   Map[ClassKey, String]    = Map.empty,
-      subheader: js.UndefOr[ReactElement] = js.undefined,
-      title:     js.UndefOr[ReactElement] = js.undefined
+      action:    js.UndefOr[Element]   = js.undefined,
+      avatar:    js.UndefOr[Element]   = js.undefined,
+      classes:   Map[ClassKey, String] = Map.empty,
+      subheader: js.UndefOr[Element]   = js.undefined,
+      title:     js.UndefOr[Element]   = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       action,

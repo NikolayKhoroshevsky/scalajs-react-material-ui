@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
 
 import scala.scalajs.js
@@ -44,7 +45,7 @@ object Divider {
   object light extends ClassKey("light")
   object absolute extends ClassKey("absolute")
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       absolute:  js.UndefOr[Boolean]   = js.undefined,

@@ -2,6 +2,7 @@ package com.pangwarta.sjrmui.transitions
 
 import com.pangwarta.sjrmui.internal.Transition
 import com.pangwarta.sjrmui._
+import japgolly.scalajs.react.Children.Varargs
 import org.scalajs.dom.html
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
@@ -57,7 +58,7 @@ object Grow {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       appear:            js.UndefOr[Boolean]             = js.undefined,

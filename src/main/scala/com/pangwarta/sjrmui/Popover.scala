@@ -1,8 +1,9 @@
 package com.pangwarta.sjrmui
 
 import internal.Transition
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 import org.scalajs.dom.html
 
@@ -62,7 +63,7 @@ object Popover {
     var anchorReference: js.UndefOr[String] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var container: js.UndefOr[ReactNode | js.Function0[ReactNode]] = js.native
+    var container: js.UndefOr[Node | js.Function0[Node]] = js.native
     var elevation: js.UndefOr[Int] = js.native
     var getContentAnchorEl: js.UndefOr[js.Function1[html.Element, html.Element]] = js.native
     var marginThreshold: js.UndefOr[Double] = js.native
@@ -77,7 +78,7 @@ object Popover {
     var PaperProps: js.UndefOr[Paper.Props] = js.native
     var role: js.UndefOr[String] = js.native
     var transformOrigin: js.UndefOr[Origin] = js.native
-    var transition: js.UndefOr[String | ReactElement] = js.native
+    var transition: js.UndefOr[String | Element] = js.native
     var transitionDuration: js.UndefOr[Transition.Duration] = js.native
   }
 
@@ -89,7 +90,7 @@ object Popover {
       anchorReference:    js.UndefOr[String],
       classes:            js.Dictionary[String],
       className:          js.UndefOr[String],
-      container:          js.UndefOr[ReactNode | js.Function0[ReactNode]],
+      container:          js.UndefOr[Node | js.Function0[Node]],
       elevation:          js.UndefOr[Int],
       getContentAnchorEl: js.UndefOr[js.Function1[html.Element, html.Element]],
       marginThreshold:    js.UndefOr[Double],
@@ -104,7 +105,7 @@ object Popover {
       PaperProps:         js.UndefOr[Paper.Props],
       role:               js.UndefOr[String],
       transformOrigin:    js.UndefOr[Origin],
-      transition:         js.UndefOr[String | ReactElement],
+      transition:         js.UndefOr[String | Element],
       transitionDuration: js.UndefOr[Transition.Duration],
       otherProps:         (String, js.Any)*
   ): Props = {
@@ -137,7 +138,7 @@ object Popover {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       action:             js.UndefOr[js.Function1[Actions, Unit]]              = js.undefined,
@@ -147,7 +148,7 @@ object Popover {
       anchorReference:    js.UndefOr[Reference]                                = js.undefined,
       classes:            Map[List.ClassKey, String]                           = Map.empty,
       className:          js.UndefOr[String]                                   = js.undefined,
-      container:          js.UndefOr[ReactNode | js.Function0[ReactNode]]      = js.undefined,
+      container:          js.UndefOr[Node | js.Function0[Node]]                = js.undefined,
       elevation:          js.UndefOr[Int]                                      = js.undefined,
       getContentAnchorEl: js.UndefOr[js.Function1[html.Element, html.Element]] = js.undefined,
       marginThreshold:    js.UndefOr[Double]                                   = js.undefined,
@@ -162,7 +163,7 @@ object Popover {
       PaperProps:         js.UndefOr[Paper.Props]                              = js.undefined,
       role:               js.UndefOr[String]                                   = js.undefined,
       transformOrigin:    js.UndefOr[Origin]                                   = js.undefined,
-      transition:         js.UndefOr[String | ReactElement]                    = js.undefined,
+      transition:         js.UndefOr[String | Element]                         = js.undefined,
       transitionDuration: js.UndefOr[Transition.Duration]                      = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

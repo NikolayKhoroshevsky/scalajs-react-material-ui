@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -23,7 +24,7 @@ object StepLabel {
     var disabled: js.UndefOr[Boolean] = js.native
     var icon: js.UndefOr[StepButton.Icon] = js.native
     var last: js.UndefOr[Boolean] = js.native
-    var optional: js.UndefOr[ReactNode] = js.native
+    var optional: js.UndefOr[Node] = js.native
     var orientation: js.UndefOr[String] = js.native
   }
 
@@ -36,7 +37,7 @@ object StepLabel {
       disabled:         js.UndefOr[Boolean],
       icon:             js.UndefOr[StepButton.Icon],
       last:             js.UndefOr[Boolean],
-      optional:         js.UndefOr[ReactNode],
+      optional:         js.UndefOr[Node],
       orientation:      js.UndefOr[String],
       otherProps:       (String, js.Any)*
   ): Props = {
@@ -70,7 +71,7 @@ object StepLabel {
     object labelContainer extends ClassKey("labelContainer")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       active:           js.UndefOr[Boolean]          = js.undefined,
@@ -81,7 +82,7 @@ object StepLabel {
       disabled:         js.UndefOr[Boolean]          = js.undefined,
       icon:             js.UndefOr[StepButton.Icon]  = js.undefined,
       last:             js.UndefOr[Boolean]          = js.undefined,
-      optional:         js.UndefOr[ReactNode]        = js.undefined,
+      optional:         js.UndefOr[Node]             = js.undefined,
       orientation:      js.UndefOr[Step.Orientation] = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

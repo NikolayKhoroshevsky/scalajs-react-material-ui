@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.Children.Varargs
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -19,7 +20,7 @@ object GridListTile {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var cols: js.UndefOr[Int] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var rows: js.UndefOr[Int] = js.native
   }
 
@@ -27,7 +28,7 @@ object GridListTile {
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
       cols:       js.UndefOr[Int],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       rows:       js.UndefOr[Int],
       otherProps: (String, js.Any)*
   ): Props = {
@@ -46,13 +47,13 @@ object GridListTile {
   object imgFullHeight extends ClassKey("imgFullHeight")
   object imgFullWidth extends ClassKey("imgFullWidth")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
+      classes:   Map[ClassKey, String]        = Map.empty,
       className: js.UndefOr[String],
       cols:      js.UndefOr[Int],
-      component: js.UndefOr[String | ReactElement],
+      component: js.UndefOr[String | Element],
       rows:      js.UndefOr[Int]
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

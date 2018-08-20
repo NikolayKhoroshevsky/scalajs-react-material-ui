@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -41,7 +42,7 @@ object BottomNavigation {
   sealed abstract case class ClassKey(get: String) extends StringType
   object root extends ClassKey("root")
 
-  private def component[A] = JsComponent[Props[A], Children.Varargs, Null](RawComponent)
+  private def component[A] = JsComponent[Props[A], Varargs, Null](RawComponent)
 
   def apply[A](
       classes:    Map[ClassKey, String]        = Map.empty,

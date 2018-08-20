@@ -1,7 +1,9 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.raw.React._
+import japgolly.scalajs.react.raw.React.Children._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -17,7 +19,7 @@ object ExpansionPanelSummary {
   @js.native
   private[sjrmui] trait Props extends ButtonBase.Props {
     var expanded: js.UndefOr[Boolean] = js.native
-    var expandIcon: js.UndefOr[ReactNode] = js.native
+    var expandIcon: js.UndefOr[Node] = js.native
     var onChange: OnJSEv1[ReactEvent] = js.native
   }
 
@@ -25,7 +27,7 @@ object ExpansionPanelSummary {
       centerRipple:             js.UndefOr[Boolean],
       classes:                  js.Dictionary[String],
       className:                js.UndefOr[String],
-      component:                js.UndefOr[String | ReactElement],
+      component:                js.UndefOr[String | Element],
       disableRipple:            js.UndefOr[Boolean],
       disabled:                 js.UndefOr[Boolean],
       focusRipple:              js.UndefOr[Boolean],
@@ -45,7 +47,7 @@ object ExpansionPanelSummary {
       role:                     js.UndefOr[String],
       tabIndex:                 js.UndefOr[Int | String],
       expanded:                 js.UndefOr[Boolean],
-      expandIcon:               js.UndefOr[ReactElement],
+      expandIcon:               js.UndefOr[Element],
       onChange:                 OnJSEv1[ReactEvent],
       otherProps:               (String, js.Any)*
   ): Props = {
@@ -88,13 +90,13 @@ object ExpansionPanelSummary {
   object expandIcon extends ClassKey("expandIcon")
   object expandIconExpanded extends ClassKey("expandIconExpanded")
 
-  private def component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private def component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       centerRipple:             js.UndefOr[Boolean]               = js.undefined,
       classes:                  Map[ClassKey, String]             = Map.empty,
       className:                js.UndefOr[String]                = js.undefined,
-      component:                js.UndefOr[String | ReactElement] = js.undefined,
+      component:                js.UndefOr[String | Element]      = js.undefined,
       disableRipple:            js.UndefOr[Boolean]               = js.undefined,
       disabled:                 js.UndefOr[Boolean]               = js.undefined,
       focusRipple:              js.UndefOr[Boolean]               = js.undefined,
@@ -114,7 +116,7 @@ object ExpansionPanelSummary {
       role:                     js.UndefOr[String]                = js.undefined,
       tabIndex:                 js.UndefOr[Int | String]          = js.undefined,
       expanded:                 js.UndefOr[Boolean]               = js.undefined,
-      expandIcon:               js.UndefOr[ReactElement]          = js.undefined,
+      expandIcon:               js.UndefOr[Element]               = js.undefined,
       onChange:                 ReactHandler1[ReactEvent]         = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(

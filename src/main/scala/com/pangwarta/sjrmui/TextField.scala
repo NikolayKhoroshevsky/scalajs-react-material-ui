@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactNode, RefFn }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -24,14 +25,14 @@ object TextField {
     var error: js.UndefOr[Boolean] = js.native
     var FormHelperTextProps: js.UndefOr[FormHelperText.Props] = js.native
     var fullWidth: js.UndefOr[Boolean] = js.native
-    var helperText: js.UndefOr[ReactNode] = js.native
+    var helperText: js.UndefOr[Node] = js.native
     var helperTextClassName: js.UndefOr[String] = js.native
     var id: js.UndefOr[String] = js.native
     var InputLabelProps: js.UndefOr[InputLabel.Props] = js.native
     var InputProps: js.UndefOr[Input.Props] = js.native
     var inputProps: js.UndefOr[js.Object] = js.native
-    var inputRef: js.UndefOr[RefFn] = js.native
-    var label: js.UndefOr[ReactNode] = js.native
+    var inputRef: js.UndefOr[RefFn[String]] = js.native
+    var label: js.UndefOr[Node] = js.native
     var labelClassName: js.UndefOr[String] = js.native
     var margin: js.UndefOr[String] = js.native
     var multiline: js.UndefOr[Boolean] = js.native
@@ -62,14 +63,14 @@ object TextField {
       error:               js.UndefOr[Boolean],
       FormHelperTextProps: js.UndefOr[FormHelperText.Props],
       fullWidth:           js.UndefOr[Boolean],
-      helperText:          js.UndefOr[ReactNode],
+      helperText:          js.UndefOr[Node],
       helperTextClassName: js.UndefOr[String],
       id:                  js.UndefOr[String],
       InputLabelProps:     js.UndefOr[InputLabel.Props],
       InputProps:          js.UndefOr[Input.Props],
       inputProps:          js.UndefOr[js.Object],
-      inputRef:            js.UndefOr[RefFn],
-      label:               js.UndefOr[ReactNode],
+      inputRef:            js.UndefOr[RefFn[String]],
+      label:               js.UndefOr[Node],
       labelClassName:      js.UndefOr[String],
       margin:              js.UndefOr[String],
       multiline:           js.UndefOr[Boolean],
@@ -119,7 +120,7 @@ object TextField {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       autoComplete:        js.UndefOr[String]                                      = js.undefined,
@@ -130,14 +131,14 @@ object TextField {
       error:               js.UndefOr[Boolean]                                     = js.undefined,
       FormHelperTextProps: js.UndefOr[FormHelperText.Props]                        = js.undefined,
       fullWidth:           js.UndefOr[Boolean]                                     = js.undefined,
-      helperText:          js.UndefOr[ReactNode]                                   = js.undefined,
+      helperText:          js.UndefOr[Node]                                        = js.undefined,
       helperTextClassName: js.UndefOr[String]                                      = js.undefined,
       id:                  js.UndefOr[String]                                      = js.undefined,
       InputLabelProps:     js.UndefOr[InputLabel.Props]                            = js.undefined,
       InputProps:          js.UndefOr[Input.Props]                                 = js.undefined,
       inputProps:          js.UndefOr[js.Object]                                   = js.undefined,
-      inputRef:            js.UndefOr[RefFn]                                       = js.undefined,
-      label:               js.UndefOr[ReactNode]                                   = js.undefined,
+      inputRef:            js.UndefOr[RefFn[String]]                               = js.undefined,
+      label:               js.UndefOr[Node]                                        = js.undefined,
       labelClassName:      js.UndefOr[String]                                      = js.undefined,
       margin:              js.UndefOr[String]                                      = js.undefined,
       multiline:           js.UndefOr[Boolean]                                     = js.undefined,

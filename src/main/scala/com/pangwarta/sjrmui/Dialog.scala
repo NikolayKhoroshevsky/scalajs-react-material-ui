@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
 import internal.Transition
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 import org.scalajs.dom.html
@@ -99,7 +100,7 @@ object Dialog {
   object fullWidth extends ClassKey("fullWidth")
   object fullScreen extends ClassKey("fullScreen")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:              Map[ClassKey, String]             = Map.empty,

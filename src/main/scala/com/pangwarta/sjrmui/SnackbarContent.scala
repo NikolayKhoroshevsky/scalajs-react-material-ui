@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -15,17 +16,17 @@ object SnackbarContent {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var action: js.UndefOr[ReactElement] = js.native
+    var action: js.UndefOr[Element] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var message: js.UndefOr[ReactElement | String] = js.native
+    var message: js.UndefOr[Element | String] = js.native
   }
 
   private def props(
-      action:     js.UndefOr[ReactElement],
+      action:     js.UndefOr[Element],
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      message:    js.UndefOr[ReactElement | String],
+      message:    js.UndefOr[Element | String],
       otherProps: (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes)
@@ -42,9 +43,9 @@ object SnackbarContent {
     object rounded extends ClassKey("rounded")
     object shadow0 extends ClassKey("shadow0")
     object shadow1 extends ClassKey("shadow1")
-    object shadow2 extends ClassKey("shadow2")
-    object shadow3 extends ClassKey("shadow3")
-    object shadow4 extends ClassKey("shadow4")
+    //    object shadow2 extends ClassKey("shadow2")
+    //    object shadow3 extends ClassKey("shadow3")
+    //    object shadow4 extends ClassKey("shadow4")
     object shadow5 extends ClassKey("shadow5")
     object shadow6 extends ClassKey("shadow6")
     object shadow7 extends ClassKey("shadow7")
@@ -69,13 +70,13 @@ object SnackbarContent {
     object action extends ClassKey("action")
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
-      action:    js.UndefOr[ReactElement]          = js.undefined,
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      message:   js.UndefOr[ReactElement | String] = js.undefined
+      action:    js.UndefOr[Element]          = js.undefined,
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      message:   js.UndefOr[Element | String] = js.undefined
   )(otherProps: (String, js.Any)*) = {
     val p = props(
       action,

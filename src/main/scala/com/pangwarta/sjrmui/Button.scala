@@ -1,8 +1,7 @@
 package com.pangwarta.sjrmui
-
-import ButtonBase.ClassKey
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.language.higherKinds
@@ -55,7 +54,7 @@ object Button {
       centerRipple:             js.UndefOr[Boolean],
       classes:                  js.Dictionary[String],
       className:                js.UndefOr[String],
-      component:                js.UndefOr[String | ReactElement],
+      component:                js.UndefOr[String | Element],
       disableRipple:            js.UndefOr[Boolean],
       disabled:                 js.UndefOr[Boolean],
       focusRipple:              js.UndefOr[Boolean],
@@ -135,13 +134,13 @@ object Button {
   object fab extends ClassKey("fab")
   object mini extends ClassKey("mini")
 
-  private def component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private def component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       centerRipple:             js.UndefOr[Boolean]               = js.undefined,
       classes:                  Map[ClassKey, String]             = Map.empty,
       className:                js.UndefOr[String]                = js.undefined,
-      component:                js.UndefOr[String | ReactElement] = js.undefined,
+      component:                js.UndefOr[String | Element]      = js.undefined,
       disableRipple:            js.UndefOr[Boolean]               = js.undefined,
       disabled:                 js.UndefOr[Boolean]               = js.undefined,
       focusRipple:              js.UndefOr[Boolean]               = js.undefined,

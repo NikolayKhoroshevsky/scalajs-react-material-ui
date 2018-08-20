@@ -5,11 +5,11 @@ import com.pangwarta.sjrmui._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 import org.scalajs.dom.html
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
-
+import japgolly.scalajs.react.Children.Varargs
 object Collapse {
 
   val auto = "auto"
@@ -75,7 +75,7 @@ object Collapse {
   object container extends ClassKey("container")
   object entered extends ClassKey("entered")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       appear:          js.UndefOr[Boolean]                         = js.undefined,

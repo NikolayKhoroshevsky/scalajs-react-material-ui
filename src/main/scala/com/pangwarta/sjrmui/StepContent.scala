@@ -1,8 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import internal.Transition
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -25,7 +26,7 @@ object StepContent {
     var last: js.UndefOr[Boolean] = js.native
     var optional: js.UndefOr[Boolean] = js.native
     var orientation: js.UndefOr[String] = js.native
-    var transition: js.UndefOr[String | ReactElement] = js.native
+    var transition: js.UndefOr[String | Element] = js.native
     var transitionDuration: js.UndefOr[Transition.Duration]
   }
 
@@ -38,7 +39,7 @@ object StepContent {
       last:             js.UndefOr[Boolean],
       optional:         js.UndefOr[Boolean],
       orientation:      js.UndefOr[String],
-      transition:       js.UndefOr[String | ReactElement],
+      transition:       js.UndefOr[String | Element],
       otherProps:       (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes)
@@ -61,18 +62,18 @@ object StepContent {
     object transition extends ClassKey("transition")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      active:           js.UndefOr[Boolean]               = js.undefined,
-      alternativeLabel: js.UndefOr[Boolean]               = js.undefined,
-      classes:          Map[ClassKey, String]             = Map.empty,
-      className:        js.UndefOr[String]                = js.undefined,
-      completed:        js.UndefOr[Boolean]               = js.undefined,
-      last:             js.UndefOr[Boolean]               = js.undefined,
-      optional:         js.UndefOr[Boolean]               = js.undefined,
-      orientation:      js.UndefOr[Step.Orientation]      = js.undefined,
-      transition:       js.UndefOr[String | ReactElement] = js.undefined
+      active:           js.UndefOr[Boolean]          = js.undefined,
+      alternativeLabel: js.UndefOr[Boolean]          = js.undefined,
+      classes:          Map[ClassKey, String]        = Map.empty,
+      className:        js.UndefOr[String]           = js.undefined,
+      completed:        js.UndefOr[Boolean]          = js.undefined,
+      last:             js.UndefOr[Boolean]          = js.undefined,
+      optional:         js.UndefOr[Boolean]          = js.undefined,
+      orientation:      js.UndefOr[Step.Orientation] = js.undefined,
+      transition:       js.UndefOr[String | Element] = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       active,

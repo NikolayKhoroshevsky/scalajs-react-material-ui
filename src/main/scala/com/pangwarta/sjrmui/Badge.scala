@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
@@ -23,14 +23,14 @@ object Badge {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var badgeContent: js.UndefOr[String | ReactElement] = js.native
+    var badgeContent: js.UndefOr[String | Element] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var color: js.UndefOr[String] = js.native
   }
 
   private def props(
-      badgeContent: js.UndefOr[String | ReactElement],
+      badgeContent: js.UndefOr[String | Element],
       classes:      js.Dictionary[String],
       className:    js.UndefOr[String],
       color:        js.UndefOr[String],
@@ -50,13 +50,13 @@ object Badge {
   object colorPrimary extends ClassKey("colorPrimary")
   object colorAccent extends ClassKey("colorAccent")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      badgeContent: js.UndefOr[String | ReactElement] = js.undefined,
-      classes:      Map[ClassKey, String]             = Map.empty,
-      className:    js.UndefOr[String]                = js.undefined,
-      color:        js.UndefOr[Color]                 = js.undefined
+      badgeContent: js.UndefOr[String | Element] = js.undefined,
+      classes:      Map[ClassKey, String]        = Map.empty,
+      className:    js.UndefOr[String]           = js.undefined,
+      color:        js.UndefOr[Color]            = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       badgeContent,

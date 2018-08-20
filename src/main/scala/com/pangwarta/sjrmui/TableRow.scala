@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -18,7 +19,7 @@ object TableRow {
   private[sjrmui] trait Props extends js.Object {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var hover: js.UndefOr[Boolean] = js.native
     var selected: js.UndefOr[Boolean] = js.native
   }
@@ -26,7 +27,7 @@ object TableRow {
   private def props(
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       hover:      js.UndefOr[Boolean],
       selected:   js.UndefOr[Boolean],
       otherProps: (String, js.Any)*
@@ -49,14 +50,14 @@ object TableRow {
     object hover extends ClassKey("hover")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      component: js.UndefOr[String | ReactElement] = js.undefined,
-      hover:     js.UndefOr[Boolean]               = js.undefined,
-      selected:  js.UndefOr[Boolean]               = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      component: js.UndefOr[String | Element] = js.undefined,
+      hover:     js.UndefOr[Boolean]          = js.undefined,
+      selected:  js.UndefOr[Boolean]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

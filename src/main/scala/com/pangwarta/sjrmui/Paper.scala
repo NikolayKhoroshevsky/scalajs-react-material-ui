@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -18,7 +19,7 @@ object Paper {
   private[sjrmui] trait Props extends js.Object {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var elevation: js.UndefOr[Int] = js.native
     var square: js.UndefOr[Boolean] = js.native
   }
@@ -26,7 +27,7 @@ object Paper {
   private def props(
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       elevation:  js.UndefOr[Int],
       square:     js.UndefOr[Boolean],
       otherProps: (String, js.Any)*
@@ -45,8 +46,8 @@ object Paper {
     object root extends ClassKey("root")
     object rounded extends ClassKey("rounded")
     object shadow0 extends ClassKey("shadow0")
-    object shadow1 extends ClassKey("shadow1")
-    object shadow2 extends ClassKey("shadow2")
+    object shadow1 extends ClassKey("elevation1")
+    object shadow2 extends ClassKey("elevation2")
     object shadow3 extends ClassKey("shadow3")
     object shadow4 extends ClassKey("shadow4")
     object shadow5 extends ClassKey("shadow5")
@@ -71,14 +72,14 @@ object Paper {
     object shadow24 extends ClassKey("shadow24")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      component: js.UndefOr[String | ReactElement] = js.undefined,
-      elevation: js.UndefOr[Int]                   = js.undefined,
-      square:    js.UndefOr[Boolean]               = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      component: js.UndefOr[String | Element] = js.undefined,
+      elevation: js.UndefOr[Int]              = js.undefined,
+      square:    js.UndefOr[Boolean]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

@@ -2,6 +2,7 @@ package com.pangwarta.sjrmui.transitions
 
 import com.pangwarta.sjrmui._
 import internal.Transition
+import japgolly.scalajs.react.Children.Varargs
 import org.scalajs.dom.html
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
@@ -58,7 +59,7 @@ object Slide {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       direction:  js.UndefOr[Direction]           = js.undefined,

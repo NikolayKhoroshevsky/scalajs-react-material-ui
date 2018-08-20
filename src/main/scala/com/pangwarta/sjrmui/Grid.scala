@@ -1,9 +1,9 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
@@ -62,7 +62,7 @@ object Grid {
     var alignContent: js.UndefOr[String] = js.native
     var alignItems: js.UndefOr[String] = js.native
     var classes: js.Dictionary[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var container: js.UndefOr[Boolean] = js.native
     var direction: js.UndefOr[String] = js.native
     var hidden: js.UndefOr[Hidden.Props] = js.native
@@ -81,7 +81,7 @@ object Grid {
       alignContent: js.UndefOr[String],
       alignItems:   js.UndefOr[String],
       classes:      js.Dictionary[String],
-      component:    js.UndefOr[String | ReactElement],
+      component:    js.UndefOr[String | Element],
       container:    js.UndefOr[Boolean],
       direction:    js.UndefOr[String],
       hidden:       js.UndefOr[Hidden.Props],
@@ -155,25 +155,25 @@ object Grid {
   object gridXs11 extends ClassKey("grid-xs-11")
   object gridXs12 extends ClassKey("grid-xs-12")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      alignContent: js.UndefOr[AlignContent]          = js.undefined,
-      alignItems:   js.UndefOr[AlignItems]            = js.undefined,
-      classes:      Map[ClassKey, String]             = Map.empty,
-      component:    js.UndefOr[String | ReactElement] = js.undefined,
-      container:    js.UndefOr[Boolean]               = js.undefined,
-      direction:    js.UndefOr[Direction]             = js.undefined,
-      hidden:       js.UndefOr[Hidden.Props]          = js.undefined,
-      item:         js.UndefOr[Boolean]               = js.undefined,
-      justify:      js.UndefOr[Justify]               = js.undefined,
-      lg:           js.UndefOr[Boolean | Int]         = js.undefined,
-      md:           js.UndefOr[Boolean | Int]         = js.undefined,
-      sm:           js.UndefOr[Boolean | Int]         = js.undefined,
-      spacing:      js.UndefOr[Int]                   = js.undefined,
-      wrap:         js.UndefOr[Wrap]                  = js.undefined,
-      xl:           js.UndefOr[Boolean | Int]         = js.undefined,
-      xs:           js.UndefOr[Boolean | Int]         = js.undefined
+      alignContent: js.UndefOr[AlignContent]     = js.undefined,
+      alignItems:   js.UndefOr[AlignItems]       = js.undefined,
+      classes:      Map[ClassKey, String]        = Map.empty,
+      component:    js.UndefOr[String | Element] = js.undefined,
+      container:    js.UndefOr[Boolean]          = js.undefined,
+      direction:    js.UndefOr[Direction]        = js.undefined,
+      hidden:       js.UndefOr[Hidden.Props]     = js.undefined,
+      item:         js.UndefOr[Boolean]          = js.undefined,
+      justify:      js.UndefOr[Justify]          = js.undefined,
+      lg:           js.UndefOr[Boolean | Int]    = js.undefined,
+      md:           js.UndefOr[Boolean | Int]    = js.undefined,
+      sm:           js.UndefOr[Boolean | Int]    = js.undefined,
+      spacing:      js.UndefOr[Int]              = js.undefined,
+      wrap:         js.UndefOr[Wrap]             = js.undefined,
+      xl:           js.UndefOr[Boolean | Int]    = js.undefined,
+      xs:           js.UndefOr[Boolean | Int]    = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       alignContent,

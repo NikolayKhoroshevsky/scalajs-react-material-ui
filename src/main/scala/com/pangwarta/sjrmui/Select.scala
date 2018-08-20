@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.Children.Varargs
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -21,16 +22,16 @@ object Select {
     var autoWidth: js.UndefOr[Boolean] = js.native
     var classes: js.Dictionary[String] = js.native
     var displayEmpty: js.UndefOr[Boolean] = js.native
-    var input: js.UndefOr[ReactNode] = js.native
+    var input: js.UndefOr[Node] = js.native
     var inputProps: js.UndefOr[js.Object] = js.native
     var MenuProps: js.UndefOr[Menu.Props] = js.native
     var multiple: js.UndefOr[Boolean] = js.native
     var native: js.UndefOr[Boolean] = js.native
-    var onChange: OnJSEv2[ReactEventFromHtml, ReactElement] = js.native
+    var onChange: OnJSEv2[ReactEventFromHtml, Element] = js.native
     var onClose: OnJSEv1[ReactEventFromHtml] = js.native
     var onOpen: OnJSEv1[ReactEventFromHtml] = js.native
     var open: js.UndefOr[Boolean] = js.native
-    var renderValue: js.UndefOr[js.Function1[Value, ReactNode]] = js.native
+    var renderValue: js.UndefOr[js.Function1[Value, Node]] = js.native
     var value: js.UndefOr[Value] = js.native
   }
 
@@ -38,16 +39,16 @@ object Select {
       autoWidth:    js.UndefOr[Boolean],
       classes:      js.Dictionary[String],
       displayEmpty: js.UndefOr[Boolean],
-      input:        js.UndefOr[ReactNode],
+      input:        js.UndefOr[Node],
       inputProps:   js.UndefOr[js.Object],
       MenuProps:    js.UndefOr[Menu.Props],
       multiple:     js.UndefOr[Boolean],
       native:       js.UndefOr[Boolean],
-      onChange:     OnJSEv2[ReactEventFromHtml, ReactElement],
+      onChange:     OnJSEv2[ReactEventFromHtml, Element],
       onClose:      OnJSEv1[ReactEventFromHtml],
       onOpen:       OnJSEv1[ReactEventFromHtml],
       open:         js.UndefOr[Boolean],
-      renderValue:  js.UndefOr[js.Function1[Value, ReactNode]],
+      renderValue:  js.UndefOr[js.Function1[Value, Node]],
       value:        js.UndefOr[Value],
       otherProps:   (String, js.Any)*
   ): Props = {
@@ -75,23 +76,23 @@ object Select {
   object disabled extends ClassKey("disabled")
   object icon extends ClassKey("icon")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      autoWidth:    js.UndefOr[Boolean]                             = js.undefined,
-      classes:      Map[ClassKey, String]                           = Map.empty,
-      displayEmpty: js.UndefOr[Boolean]                             = js.undefined,
-      input:        js.UndefOr[ReactNode]                           = js.undefined,
-      inputProps:   js.UndefOr[js.Object]                           = js.undefined,
-      MenuProps:    js.UndefOr[Menu.Props]                          = js.undefined,
-      multiple:     js.UndefOr[Boolean]                             = js.undefined,
-      native:       js.UndefOr[Boolean]                             = js.undefined,
-      onChange:     ReactHandler2[ReactEventFromHtml, ReactElement] = js.undefined,
-      onClose:      ReactHandler1[ReactEventFromHtml]               = js.undefined,
-      onOpen:       ReactHandler1[ReactEventFromHtml]               = js.undefined,
-      open:         js.UndefOr[Boolean]                             = js.undefined,
-      renderValue:  js.UndefOr[js.Function1[Value, ReactNode]]      = js.undefined,
-      value:        js.UndefOr[Value]                               = js.undefined
+      autoWidth:    js.UndefOr[Boolean]                        = js.undefined,
+      classes:      Map[ClassKey, String]                      = Map.empty,
+      displayEmpty: js.UndefOr[Boolean]                        = js.undefined,
+      input:        js.UndefOr[Node]                           = js.undefined,
+      inputProps:   js.UndefOr[js.Object]                      = js.undefined,
+      MenuProps:    js.UndefOr[Menu.Props]                     = js.undefined,
+      multiple:     js.UndefOr[Boolean]                        = js.undefined,
+      native:       js.UndefOr[Boolean]                        = js.undefined,
+      onChange:     ReactHandler2[ReactEventFromHtml, Element] = js.undefined,
+      onClose:      ReactHandler1[ReactEventFromHtml]          = js.undefined,
+      onOpen:       ReactHandler1[ReactEventFromHtml]          = js.undefined,
+      open:         js.UndefOr[Boolean]                        = js.undefined,
+      renderValue:  js.UndefOr[js.Function1[Value, Node]]      = js.undefined,
+      value:        js.UndefOr[Value]                          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       autoWidth,

@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.Children.Varargs
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -18,7 +19,7 @@ object FormLabel {
   private[sjrmui] trait Props extends js.Object {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var error: js.UndefOr[Boolean] = js.native
     var focused: js.UndefOr[Boolean] = js.native
@@ -28,7 +29,7 @@ object FormLabel {
   private def props(
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      component:  js.UndefOr[String | ReactElement],
+      component:  js.UndefOr[String | Element],
       disabled:   js.UndefOr[Boolean],
       error:      js.UndefOr[Boolean],
       focused:    js.UndefOr[Boolean],
@@ -46,18 +47,18 @@ object FormLabel {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   abstract sealed case class ClassKey(get: String) extends StringType
 
   def apply(
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      component: js.UndefOr[String | ReactElement] = js.undefined,
-      disabled:  js.UndefOr[Boolean]               = js.undefined,
-      error:     js.UndefOr[Boolean]               = js.undefined,
-      focused:   js.UndefOr[Boolean]               = js.undefined,
-      required:  js.UndefOr[Boolean]               = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      component: js.UndefOr[String | Element] = js.undefined,
+      disabled:  js.UndefOr[Boolean]          = js.undefined,
+      error:     js.UndefOr[Boolean]          = js.undefined,
+      focused:   js.UndefOr[Boolean]          = js.undefined,
+      required:  js.UndefOr[Boolean]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

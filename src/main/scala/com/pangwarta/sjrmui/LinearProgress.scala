@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
 
 import scala.scalajs.js
@@ -40,7 +41,7 @@ object LinearProgress {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   sealed abstract case class ClassKey(get: String) extends StringType
   object ClassKey {

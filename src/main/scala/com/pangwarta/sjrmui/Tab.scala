@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw._
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -27,9 +28,9 @@ object Tab {
     var className: js.UndefOr[String] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var fullWidth: js.UndefOr[Boolean] = js.native
-    var icon: js.UndefOr[String | ReactElement] = js.native
-    var indicator: js.UndefOr[String | ReactElement] = js.native
-    var label: js.UndefOr[String | ReactElement] = js.native
+    var icon: js.UndefOr[String | Element] = js.native
+    var indicator: js.UndefOr[String | Element] = js.native
+    var label: js.UndefOr[String | Element] = js.native
     var onChange: OnJSEv1[ReactEvent] = js.native
     var onClick: OnJSEv1[ReactEvent] = js.native
     var selected: js.UndefOr[Boolean] = js.native
@@ -41,9 +42,9 @@ object Tab {
       className:  js.UndefOr[String],
       disabled:   js.UndefOr[Boolean],
       fullWidth:  js.UndefOr[Boolean],
-      icon:       js.UndefOr[String | ReactElement],
-      indicator:  js.UndefOr[String | ReactElement],
-      label:      js.UndefOr[String | ReactElement],
+      icon:       js.UndefOr[String | Element],
+      indicator:  js.UndefOr[String | Element],
+      label:      js.UndefOr[String | Element],
       onChange:   OnJSEv1[ReactEvent],
       onClick:    OnJSEv1[ReactEvent],
       selected:   js.UndefOr[Boolean],
@@ -86,21 +87,21 @@ object Tab {
   object label extends ClassKey("label")
   object labelWrapped extends ClassKey("labelWrapped")
 
-  private def component[A] = JsComponent[Props[A], Children.Varargs, Null](RawComponent)
+  private def component[A] = JsComponent[Props[A], Varargs, Null](RawComponent)
 
   def apply[A](
-      classes:   Map[ClassKey, String]             = Map.empty,
-      className: js.UndefOr[String]                = js.undefined,
-      disabled:  js.UndefOr[Boolean]               = js.undefined,
-      fullWidth: js.UndefOr[Boolean]               = js.undefined,
-      icon:      js.UndefOr[String | ReactElement] = js.undefined,
-      indicator: js.UndefOr[String | ReactElement] = js.undefined,
-      label:     js.UndefOr[String | ReactElement] = js.undefined,
-      onChange:  OnJSEv1[ReactEvent]               = js.undefined,
-      onClick:   OnJSEv1[ReactEvent]               = js.undefined,
-      selected:  js.UndefOr[Boolean]               = js.undefined,
-      style:     js.UndefOr[js.Object]             = js.undefined,
-      value:     js.UndefOr[A]                     = js.undefined
+      classes:   Map[ClassKey, String]        = Map.empty,
+      className: js.UndefOr[String]           = js.undefined,
+      disabled:  js.UndefOr[Boolean]          = js.undefined,
+      fullWidth: js.UndefOr[Boolean]          = js.undefined,
+      icon:      js.UndefOr[String | Element] = js.undefined,
+      indicator: js.UndefOr[String | Element] = js.undefined,
+      label:     js.UndefOr[String | Element] = js.undefined,
+      onChange:  OnJSEv1[ReactEvent]          = js.undefined,
+      onClick:   OnJSEv1[ReactEvent]          = js.undefined,
+      selected:  js.UndefOr[Boolean]          = js.undefined,
+      style:     js.UndefOr[js.Object]        = js.undefined,
+      value:     js.UndefOr[A]                = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

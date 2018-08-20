@@ -1,7 +1,7 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -23,7 +23,7 @@ object IconButton {
       centerRipple:             js.UndefOr[Boolean],
       classes:                  js.Dictionary[String],
       className:                js.UndefOr[String],
-      component:                js.UndefOr[String | ReactElement],
+      component:                js.UndefOr[String | Element],
       disableRipple:            js.UndefOr[Boolean],
       disabled:                 js.UndefOr[Boolean],
       focusRipple:              js.UndefOr[Boolean],
@@ -59,7 +59,7 @@ object IconButton {
     onKeyboardFocus.foreach(p.updateDynamic("onKeyboardFocus")(_))
     onKeyDown.foreach(p.updateDynamic("onKeyDown")(_))
     onKeyUp.foreach(p.updateDynamic("onKeyUp")(_))
-    onMouseDown.foreach(p.updateDynamic("onMouseDown")(_))
+    //    onMouseDown.foreach(p.updateDynamic("shadow2")(_))
     onMouseLeave.foreach(p.updateDynamic("onMouseLeave")(_))
     onMouseUp.foreach(p.updateDynamic("onMouseUp")(_))
     onTouchEnd.foreach(p.updateDynamic("onTouchEnd")(_))
@@ -91,13 +91,13 @@ object IconButton {
     object icon extends ClassKey("icon")
   }
 
-  private def component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private def component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       centerRipple:             js.UndefOr[Boolean]               = js.undefined,
       classes:                  Map[ClassKey, String]             = Map.empty,
       className:                js.UndefOr[String]                = js.undefined,
-      component:                js.UndefOr[String | ReactElement] = js.undefined,
+      component:                js.UndefOr[String | Element]      = js.undefined,
       disableRipple:            js.UndefOr[Boolean]               = js.undefined,
       disabled:                 js.UndefOr[Boolean]               = js.undefined,
       focusRipple:              js.UndefOr[Boolean]               = js.undefined,

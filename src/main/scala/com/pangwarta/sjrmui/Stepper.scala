@@ -1,7 +1,7 @@
 package com.pangwarta.sjrmui
-
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode }
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -20,7 +20,7 @@ object Stepper {
     var alternativeLabel: js.UndefOr[Boolean] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var connector: js.UndefOr[ReactElement | ReactNode] = js.native
+    var connector: js.UndefOr[Element | Node] = js.native
     var nonLinear: js.UndefOr[Boolean] = js.native
     var orientation: js.UndefOr[String] = js.native
   }
@@ -30,7 +30,7 @@ object Stepper {
       alternativeLabel: js.UndefOr[Boolean],
       classes:          js.Dictionary[String],
       className:        js.UndefOr[String],
-      connector:        js.UndefOr[ReactElement | ReactNode],
+      connector:        js.UndefOr[Element | Node],
       nonLinear:        js.UndefOr[Boolean],
       orientation:      js.UndefOr[String],
       otherProps:       (String, js.Any)*
@@ -52,9 +52,9 @@ object Stepper {
     object rounded extends ClassKey("rounded")
     object shadow0 extends ClassKey("shadow0")
     object shadow1 extends ClassKey("shadow1")
-    object shadow2 extends ClassKey("shadow2")
-    object shadow3 extends ClassKey("shadow3")
-    object shadow4 extends ClassKey("shadow4")
+    //    object shadow2 extends ClassKey("shadow2")
+    //    object shadow3 extends ClassKey("shadow3")
+    //    object shadow4 extends ClassKey("shadow4")
     object shadow5 extends ClassKey("shadow5")
     object shadow6 extends ClassKey("shadow6")
     object shadow7 extends ClassKey("shadow7")
@@ -80,16 +80,16 @@ object Stepper {
     object alternativeLabel extends ClassKey("alternativeLabel")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      activeStep:       js.UndefOr[Int]                      = js.undefined,
-      alternativeLabel: js.UndefOr[Boolean]                  = js.undefined,
-      classes:          Map[ClassKey, String]                = Map.empty,
-      className:        js.UndefOr[String]                   = js.undefined,
-      connector:        js.UndefOr[ReactElement | ReactNode] = js.undefined,
-      nonLinear:        js.UndefOr[Boolean]                  = js.undefined,
-      orientation:      js.UndefOr[String]                   = js.undefined
+      activeStep:       js.UndefOr[Int]            = js.undefined,
+      alternativeLabel: js.UndefOr[Boolean]        = js.undefined,
+      classes:          Map[ClassKey, String]      = Map.empty,
+      className:        js.UndefOr[String]         = js.undefined,
+      connector:        js.UndefOr[Element | Node] = js.undefined,
+      nonLinear:        js.UndefOr[Boolean]        = js.undefined,
+      orientation:      js.UndefOr[String]         = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       activeStep,

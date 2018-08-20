@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -54,7 +55,7 @@ object Typography {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var color: js.UndefOr[String] = js.native
-    var component: js.UndefOr[String | ReactElement] = js.native
+    var component: js.UndefOr[String | Element] = js.native
     var gutterBottom: js.UndefOr[Boolean] = js.native
     var noWrap: js.UndefOr[Boolean] = js.native
     var paragraph: js.UndefOr[Boolean] = js.native
@@ -66,7 +67,7 @@ object Typography {
       classes:      js.Dictionary[String],
       className:    js.UndefOr[String],
       color:        js.UndefOr[String],
-      component:    js.UndefOr[String | ReactElement],
+      component:    js.UndefOr[String | Element],
       gutterBottom: js.UndefOr[Boolean],
       noWrap:       js.UndefOr[Boolean],
       paragraph:    js.UndefOr[Boolean],
@@ -114,18 +115,18 @@ object Typography {
     object colorError extends ClassKey("colorError")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      align:        js.UndefOr[Alignment]             = js.undefined,
-      classes:      Map[ClassKey, String]             = Map.empty,
-      className:    js.UndefOr[String]                = js.undefined,
-      color:        js.UndefOr[Color]                 = js.undefined,
-      component:    js.UndefOr[String | ReactElement] = js.undefined,
-      gutterBottom: js.UndefOr[Boolean]               = js.undefined,
-      noWrap:       js.UndefOr[Boolean]               = js.undefined,
-      paragraph:    js.UndefOr[Boolean]               = js.undefined,
-      variant:      js.UndefOr[Variant]               = js.undefined
+      align:        js.UndefOr[Alignment]        = js.undefined,
+      classes:      Map[ClassKey, String]        = Map.empty,
+      className:    js.UndefOr[String]           = js.undefined,
+      color:        js.UndefOr[Color]            = js.undefined,
+      component:    js.UndefOr[String | Element] = js.undefined,
+      gutterBottom: js.UndefOr[Boolean]          = js.undefined,
+      noWrap:       js.UndefOr[Boolean]          = js.undefined,
+      paragraph:    js.UndefOr[Boolean]          = js.undefined,
+      variant:      js.UndefOr[Variant]          = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       align,

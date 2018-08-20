@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -17,14 +18,14 @@ object StepIcon {
     var active: js.UndefOr[Boolean] = js.native
     var classes: js.Dictionary[String] = js.native
     var completed: js.UndefOr[Boolean] = js.native
-    var icon: ReactNode = js.native
+    var icon: Node = js.native
   }
 
   private def props(
       active:     js.UndefOr[Boolean],
       classes:    js.Dictionary[String],
       completed:  js.UndefOr[Boolean],
-      icon:       ReactNode,
+      icon:       Node,
       otherProps: (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes, icon = icon)
@@ -39,13 +40,13 @@ object StepIcon {
     object completed extends ClassKey("completed")
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   private def apply(
       active:    js.UndefOr[Boolean]   = js.undefined,
       classes:   Map[ClassKey, String] = Map.empty,
       completed: js.UndefOr[Boolean]   = js.undefined,
-      icon:      ReactNode
+      icon:      Node
   )(otherProps: (String, js.Any)*) = {
     val p = props(
       active,

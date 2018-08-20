@@ -1,5 +1,6 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -32,7 +33,7 @@ object DialogContent {
   sealed abstract case class ClassKey(get: String) extends StringType
   object root extends ClassKey("root")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:   Map[ClassKey, String] = Map.empty,

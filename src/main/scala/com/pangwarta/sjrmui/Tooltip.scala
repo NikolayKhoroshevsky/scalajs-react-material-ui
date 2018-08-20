@@ -1,15 +1,15 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 object Tooltip {
 
-  @JSImport("material-ui", "Tooltip")
+  @JSImport("@material-ui", "Tooltip")
   @js.native
   private object RawComponent extends js.Object
 
@@ -29,7 +29,7 @@ object Tooltip {
     var placement: js.UndefOr[String] = js.native
     var PopperProps: js.UndefOr[js.Object] = js.native
     var theme: js.UndefOr[js.Object] = js.native
-    var title: ReactNode = js.native
+    var title: Node = js.native
   }
 
   sealed abstract case class Placement(get: String) extends StringType
@@ -63,7 +63,7 @@ object Tooltip {
       placement:           js.UndefOr[String],
       PopperProps:         js.UndefOr[js.Object],
       theme:               js.UndefOr[js.Object],
-      title:               ReactNode,
+      title:               Node,
       otherProps:          (String, js.Any)*
   ): Props = {
     val p = js.Dynamic.literal(classes = classes, title = title)
@@ -97,7 +97,7 @@ object Tooltip {
     object tooltipOpen extends ClassKey("tooltipOpen")
   }
 
-  val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:             Map[ClassKey, String]       = Map.empty,
@@ -114,7 +114,7 @@ object Tooltip {
       placement:           js.UndefOr[Placement]       = js.undefined,
       PopperProps:         js.UndefOr[js.Object]       = js.undefined,
       theme:               js.UndefOr[js.Object]       = js.undefined,
-      title:               ReactNode
+      title:               Node
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       classes,

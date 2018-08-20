@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactElement
+import japgolly.scalajs.react.raw.React._
 import japgolly.scalajs.react.vdom.VdomNode
 
 import scala.scalajs.js
@@ -20,7 +21,7 @@ object Step {
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var completed: js.UndefOr[Boolean] = js.native
-    var connector: js.UndefOr[ReactElement] = js.native
+    var connector: js.UndefOr[Element] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var index: js.UndefOr[Int] = js.native
     var last: js.UndefOr[Boolean] = js.native
@@ -39,7 +40,7 @@ object Step {
       classes:          js.Dictionary[String],
       className:        js.UndefOr[String],
       completed:        js.UndefOr[Boolean],
-      connector:        js.UndefOr[ReactElement],
+      connector:        js.UndefOr[Element],
       disabled:         js.UndefOr[Boolean],
       index:            js.UndefOr[Int],
       last:             js.UndefOr[Boolean],
@@ -68,19 +69,19 @@ object Step {
     object alternativeLabel extends ClassKey("alternativeLabel")
   }
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
-      active:           js.UndefOr[Boolean]      = js.undefined,
-      alternativeLabel: js.UndefOr[Boolean]      = js.undefined,
-      classes:          Map[ClassKey, String]    = Map.empty,
-      className:        js.UndefOr[String]       = js.undefined,
-      completed:        js.UndefOr[Boolean]      = js.undefined,
-      connector:        js.UndefOr[ReactElement] = js.undefined,
-      disabled:         js.UndefOr[Boolean]      = js.undefined,
-      index:            js.UndefOr[Int]          = js.undefined,
-      last:             js.UndefOr[Boolean]      = js.undefined,
-      orientation:      js.UndefOr[Orientation]  = js.undefined
+      active:           js.UndefOr[Boolean]     = js.undefined,
+      alternativeLabel: js.UndefOr[Boolean]     = js.undefined,
+      classes:          Map[ClassKey, String]   = Map.empty,
+      className:        js.UndefOr[String]      = js.undefined,
+      completed:        js.UndefOr[Boolean]     = js.undefined,
+      connector:        js.UndefOr[Element]     = js.undefined,
+      disabled:         js.UndefOr[Boolean]     = js.undefined,
+      index:            js.UndefOr[Int]         = js.undefined,
+      last:             js.UndefOr[Boolean]     = js.undefined,
+      orientation:      js.UndefOr[Orientation] = js.undefined
   )(otherProps: (String, js.Any)*)(children: VdomNode*) = {
     val p = props(
       active,

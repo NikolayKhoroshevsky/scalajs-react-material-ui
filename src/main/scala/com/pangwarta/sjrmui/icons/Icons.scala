@@ -2,9 +2,10 @@
 package com.pangwarta.sjrmui.icons
 
 import com.pangwarta.sjrmui._
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react.component.Js.{ RawMounted, UnmountedWithRawType }
 import japgolly.scalajs.react.vdom.VdomNode
-import japgolly.scalajs.react.{ Children, JsComponent, ReactMouseEventFromHtml }
+import japgolly.scalajs.react.{ JsComponent, ReactMouseEventFromHtml }
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -54,7 +55,7 @@ object MuiSvgIcon {
         onMouseLeave: ReactHandler1[ReactMouseEventFromHtml] = js.undefined,
         style:        js.UndefOr[CssProperties]              = js.undefined,
         viewBox:      js.UndefOr[String]                     = js.undefined
-    )(children: VdomNode*): UnmountedWithRawType[MuiSvgIconProps, Null, RawMounted] = {
+    )(children: VdomNode*): UnmountedWithRawType[MuiSvgIconProps, Null, RawMounted[MuiSvgIconProps, Null]] = {
       val p = props(
         key,
         ref,
@@ -66,7 +67,7 @@ object MuiSvgIcon {
         viewBox
       )
       val svgProps: MuiSvgIconProps = p.asInstanceOf[MuiSvgIconProps]
-      val Component = JsComponent[MuiSvgIconProps, Children.Varargs, Null](icon)
+      val Component = JsComponent[MuiSvgIconProps, Varargs, Null](icon)
       Component(svgProps)(children: _*)
     }
   }

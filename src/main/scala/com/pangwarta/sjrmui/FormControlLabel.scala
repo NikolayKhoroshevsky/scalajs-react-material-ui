@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactElement, ReactNode, RefFn }
+import japgolly.scalajs.react.Children.None
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -18,10 +19,10 @@ object FormControlLabel {
     var checked: js.UndefOr[Boolean | String] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var control: js.UndefOr[ReactElement] = js.native
+    var control: js.UndefOr[Element] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
-    var inputRef: js.UndefOr[RefFn] = js.native
-    var label: js.UndefOr[ReactNode] = js.native
+    var inputRef: js.UndefOr[RefFn[String]] = js.native
+    var label: js.UndefOr[Node] = js.native
     var name: js.UndefOr[String] = js.native
     var onChange: OnJSEv2[ReactEvent, Boolean] = js.native
     var value: js.UndefOr[String] = js.native
@@ -31,10 +32,10 @@ object FormControlLabel {
       checked:    js.UndefOr[Boolean | String],
       classes:    js.Dictionary[String],
       className:  js.UndefOr[String],
-      control:    js.UndefOr[ReactElement],
+      control:    js.UndefOr[Element],
       disabled:   js.UndefOr[Boolean],
-      inputRef:   js.UndefOr[RefFn],
-      label:      js.UndefOr[ReactNode],
+      inputRef:   js.UndefOr[RefFn[String]],
+      label:      js.UndefOr[Node],
       name:       js.UndefOr[String],
       onChange:   OnJSEv2[ReactEvent, Boolean],
       value:      js.UndefOr[String],
@@ -59,16 +60,16 @@ object FormControlLabel {
   object disabled extends ClassKey("disabled")
   object label extends ClassKey("label")
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       checked:   js.UndefOr[Boolean | String] = js.undefined,
       classes:   Map[ClassKey, String]        = Map.empty,
       className: js.UndefOr[String]           = js.undefined,
-      control:   js.UndefOr[ReactElement]     = js.undefined,
+      control:   js.UndefOr[Element]          = js.undefined,
       disabled:  js.UndefOr[Boolean]          = js.undefined,
-      inputRef:  js.UndefOr[RefFn]            = js.undefined,
-      label:     js.UndefOr[ReactNode]        = js.undefined,
+      inputRef:  js.UndefOr[RefFn[String]]    = js.undefined,
+      label:     js.UndefOr[Node]             = js.undefined,
       name:      js.UndefOr[String]           = js.undefined,
       onChange:  OnJSEv2[ReactEvent, Boolean] = js.undefined,
       value:     js.UndefOr[String]           = js.undefined

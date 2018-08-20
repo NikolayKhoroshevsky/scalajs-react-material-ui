@@ -1,6 +1,7 @@
 package com.pangwarta.sjrmui
 
 import internal.Transition
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
 
 import scala.scalajs.js
@@ -41,7 +42,7 @@ object Backdrop {
   object root extends ClassKey("root")
   object invisible extends ClassKey("invisible")
 
-  val component = JsComponent[Props, Children.None, Null](RawComponent)
+  val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       classes:            Map[ClassKey, String]           = Map.empty,

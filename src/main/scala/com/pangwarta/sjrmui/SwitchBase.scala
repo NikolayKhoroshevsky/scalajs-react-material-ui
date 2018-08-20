@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.{ ReactNode, RefFn }
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -16,18 +17,18 @@ object SwitchBase {
   @js.native
   private[sjrmui] trait Props extends js.Object {
     var checked: js.UndefOr[Boolean | String] = js.native
-    var checkedIcon: js.UndefOr[ReactNode] = js.native
+    var checkedIcon: js.UndefOr[Node] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
     var defaultChecked: js.UndefOr[Boolean] = js.native
     var disabled: js.UndefOr[Boolean] = js.native
     var disableRipple: js.UndefOr[Boolean] = js.native
-    var icon: js.UndefOr[ReactNode] = js.native
+    var icon: js.UndefOr[Node] = js.native
     var id: js.UndefOr[String] = js.native
     var indeterminate: js.UndefOr[Boolean] = js.native
-    var indeterminateIcon: js.UndefOr[ReactNode] = js.native
+    var indeterminateIcon: js.UndefOr[Node] = js.native
     var inputProps: js.UndefOr[js.Object] = js.native
-    var inputRef: js.UndefOr[RefFn] = js.native
+    var inputRef: js.UndefOr[RefFn[String]] = js.native
     var name: js.UndefOr[String] = js.native
     var onChange: OnJSEv2[ReactEvent, Boolean] = js.native
     var tabIndex: js.UndefOr[Int | String] = js.native
@@ -37,16 +38,16 @@ object SwitchBase {
 
   private def props(
       checked:        js.UndefOr[Boolean | String],
-      checkedIcon:    js.UndefOr[ReactNode],
+      checkedIcon:    js.UndefOr[Node],
       classes:        js.Dictionary[String],
       className:      js.UndefOr[String],
       defaultChecked: js.UndefOr[Boolean],
       disabled:       js.UndefOr[Boolean],
       disableRipple:  js.UndefOr[Boolean],
-      icon:           js.UndefOr[ReactNode],
+      icon:           js.UndefOr[Node],
       id:             js.UndefOr[String],
       inputProps:     js.UndefOr[js.Object],
-      inputRef:       js.UndefOr[RefFn],
+      inputRef:       js.UndefOr[RefFn[String]],
       name:           js.UndefOr[String],
       onChange:       OnJSEv2[ReactEvent, Boolean],
       tabIndex:       js.UndefOr[Int | String],
@@ -81,20 +82,20 @@ object SwitchBase {
   object disabled extends ClassKey("disabled")
   object input extends ClassKey("input")
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   def apply(
       checked:        js.UndefOr[Boolean | String]       = js.undefined,
-      checkedIcon:    js.UndefOr[ReactNode]              = js.undefined,
+      checkedIcon:    js.UndefOr[Node]                   = js.undefined,
       classes:        Map[ClassKey, String]              = Map.empty,
       className:      js.UndefOr[String]                 = js.undefined,
       defaultChecked: js.UndefOr[Boolean]                = js.undefined,
       disabled:       js.UndefOr[Boolean]                = js.undefined,
       disableRipple:  js.UndefOr[Boolean]                = js.undefined,
-      icon:           js.UndefOr[ReactNode]              = js.undefined,
+      icon:           js.UndefOr[Node]                   = js.undefined,
       id:             js.UndefOr[String]                 = js.undefined,
       inputProps:     js.UndefOr[js.Object]              = js.undefined,
-      inputRef:       js.UndefOr[RefFn]                  = js.undefined,
+      inputRef:       js.UndefOr[RefFn[String]]          = js.undefined,
       name:           js.UndefOr[String]                 = js.undefined,
       onChange:       ReactHandler2[ReactEvent, Boolean] = js.undefined,
       tabIndex:       js.UndefOr[Int | String]           = js.undefined,

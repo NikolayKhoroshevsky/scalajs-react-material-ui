@@ -1,7 +1,8 @@
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.None
 import japgolly.scalajs.react._
-import japgolly.scalajs.react.raw.ReactNode
+import japgolly.scalajs.react.raw.React._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -14,22 +15,22 @@ object GridListTileBar {
 
   @js.native
   private[sjrmui] trait Props extends js.Object {
-    var actionIcon: js.UndefOr[ReactNode] = js.native
+    var actionIcon: js.UndefOr[Node] = js.native
     var actionPosition: js.UndefOr[String] = js.native
     var classes: js.Dictionary[String] = js.native
     var className: js.UndefOr[String] = js.native
-    var subtitle: js.UndefOr[ReactNode] = js.native
-    var title: js.UndefOr[ReactNode] = js.native
+    var subtitle: js.UndefOr[Node] = js.native
+    var title: js.UndefOr[Node] = js.native
     var titlePosition: js.UndefOr[String] = js.native
   }
 
   private def props(
-      actionIcon:     js.UndefOr[ReactNode],
+      actionIcon:     js.UndefOr[Node],
       actionPosition: js.UndefOr[String],
       classes:        js.Dictionary[String],
       className:      js.UndefOr[String],
-      subtitle:       js.UndefOr[ReactNode],
-      title:          js.UndefOr[ReactNode],
+      subtitle:       js.UndefOr[Node],
+      title:          js.UndefOr[Node],
       titlePosition:  js.UndefOr[String],
       otherProps:     (String, js.Any)*
   ): Props = {
@@ -44,7 +45,7 @@ object GridListTileBar {
     p.asInstanceOf[Props]
   }
 
-  private val component = JsComponent[Props, Children.None, Null](RawComponent)
+  private val component = JsComponent[Props, None, Null](RawComponent)
 
   sealed abstract case class ActionPosition(get: String) extends StringType
   object left extends ActionPosition("left")
@@ -68,12 +69,12 @@ object GridListTileBar {
   object childImg extends ClassKey("childImg")
 
   def apply(
-      actionIcon:     js.UndefOr[ReactNode]      = js.undefined,
+      actionIcon:     js.UndefOr[Node]           = js.undefined,
       actionPosition: js.UndefOr[ActionPosition] = js.undefined,
       classes:        Map[ClassKey, String]      = Map.empty,
       className:      js.UndefOr[String]         = js.undefined,
-      subtitle:       js.UndefOr[ReactNode]      = js.undefined,
-      title:          js.UndefOr[ReactNode]      = js.undefined,
+      subtitle:       js.UndefOr[Node]           = js.undefined,
+      title:          js.UndefOr[Node]           = js.undefined,
       titlePosition:  js.UndefOr[TitlePosition]  = js.undefined
   )(otherProps: (String, js.Any)*) = {
     val p = props(

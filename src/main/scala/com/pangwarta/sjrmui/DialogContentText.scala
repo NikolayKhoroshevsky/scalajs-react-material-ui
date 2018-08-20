@@ -2,7 +2,7 @@ package com.pangwarta.sjrmui
 
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
-
+import japgolly.scalajs.react.Children.Varargs
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
@@ -32,7 +32,7 @@ object DialogContentText {
   sealed abstract case class ClassKey(get: String) extends StringType
   object root extends ClassKey("root")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:   Map[ClassKey, String] = Map.empty,

@@ -2,6 +2,7 @@ package com.pangwarta.sjrmui
 
 package com.pangwarta.sjrmui
 
+import japgolly.scalajs.react.Children.Varargs
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.VdomNode
 
@@ -35,7 +36,7 @@ object ListItemSecondaryAction {
   object root extends ClassKey("root")
   object icon extends ClassKey("icon")
 
-  private val component = JsComponent[Props, Children.Varargs, Null](RawComponent)
+  private val component = JsComponent[Props, Varargs, Null](RawComponent)
 
   def apply(
       classes:   Map[ClassKey, String] = Map.empty,
